@@ -6,10 +6,12 @@ namespace Assets.Scripts.Worlds
     {
         private Boot _boot;
         public WorldState state;
+        public Clock clock;
 
         public void Init(Boot boot) {
             _boot = boot;
             state.Init(boot, this);
+            clock.Init(boot, this);
         }
     }    
 } 

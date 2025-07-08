@@ -7,13 +7,13 @@
 Создать 5 локаций: Home_NPC1, Work_Shop, Commercial_Mall, Bar, Street (связи: Улица соединяет все здания).
 
 Базовый NPC:
-Класс NPCData (Name, HomeLocationID, WorkLocationID).
-Класс NPCState (CurrentLocationID, Hunger, Energy, CurrentActivity).
+Класс NPCData (Name, HomeLocationID, WorkLocationID).+
+Класс NPCState (CurrentLocationID, Hunger, Energy, CurrentActivity).+
 2 тестовых NPC: Обычный Джо (Home=Home_NPC1, Work=Work_Shop), Жулик Боб (Home=Home_NPC1, Work=None).
 
 Система времени:
 Класс WorldState (CurrentTimeInMinutes, Locations[], NPCs[]). +
-Упрощенный "движок времени": цикл, увеличивающий CurrentTimeInMinutes на 1 каждую секунду реального времени.
+Упрощенный "движок времени": цикл, увеличивающий CurrentTimeInMinutes на 1 каждую секунду реального времени. +
 
 Отладка:
 Вывод в консоль статуса каждую минуту: [Время] [NPC Имя] в [Локация]. Голод: 75%.

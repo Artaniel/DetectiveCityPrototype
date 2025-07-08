@@ -8,7 +8,7 @@ namespace Assets.Scripts.Worlds
         private Boot _boot;
         private World _world;
 
-        public int CurrentTimeInMinutes;
+        public int currentTimeInMinutes;
         public List<Location> Locations = new List<Location>();
         public List<NPC> NPCs = new List<NPC>();
         //public List<CrimeEvent> ActiveCrimes = new List<CrimeEvent>();
