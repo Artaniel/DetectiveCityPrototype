@@ -1,20 +1,23 @@
-using UnityEngine;
-//using YG;
-
-public class Monetization : MonoBehaviour
+namespace Assets.Scripts
 {
-    private Boot _boot;
+    using UnityEngine;
+    //using YG;
 
-    public void Init(Boot boot) {
-        _boot = boot;
+    public class Monetization : MonoBehaviour
+    {
+        private Boot _boot;
 
-        //YandexGame.GameReadyAPI(); 
+        public void Init(Boot boot) {
+            _boot = boot;
 
-    }
+            //YandexGame.GameReadyAPI(); 
 
-    public void PlayFullscreenAds() {
-    }
+        }
 
-    public void PlayRewardedAds() {
+        public void PlayFullscreenAds() {
+        }
+
+        public void PlayRewardedAds() {
+        }
     }
 }

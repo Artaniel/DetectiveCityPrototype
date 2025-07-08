@@ -1,16 +1,19 @@
-using UnityEngine;
-
-public class Root : MonoBehaviour
+namespace Assets.Scripts
 {
-    public SceneBootChannel bootChannel;
-    public Boot activeBoot;
+    using UnityEngine;
 
-    private void Awake() {
-        DontDestroyOnLoad(this.gameObject);
-    }
+    public class Root : MonoBehaviour
+    {
+        public SceneBootChannel bootChannel;
+        public Boot activeBoot;
 
-    private void OnBootCreated(Boot boot) {
-        activeBoot = boot;
-        boot.Init(this);
+        private void Awake() {
+            DontDestroyOnLoad(gameObject);
+        }
+
+        public void OnBootCreated(Boot boot) {
+            activeBoot = boot;
+            boot.Init(this);
+        }
     }
 } 

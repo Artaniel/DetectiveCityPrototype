@@ -1,12 +1,15 @@
-using UnityEngine;
-using System;
-
-[CreateAssetMenu(menuName = "Channels/SceneBootChannel", fileName = "SceneBootChannel")]
-public class SceneBootChannel : ScriptableObject
+namespace Assets.Scripts
 {
-    public Root root;
+    using UnityEngine;
+    using System;
 
-    public void BootCreatedSignal(Boot boot) {
-        root.OnBootCreated(boot);
+    [CreateAssetMenu(menuName = "Channels/SceneBootChannel", fileName = "SceneBootChannel")]
+    public class SceneBootChannel : ScriptableObject
+    {
+        public Root root;
+
+        public void BootCreatedSignal(Boot boot) {
+            root.OnBootCreated(boot);
+        }
     }
 } 

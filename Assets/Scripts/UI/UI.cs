@@ -1,11 +1,14 @@
-using UnityEngine;
-
-public class UI : MonoBehaviour
+namespace Assets.Scripts.UI
 {
-    private Boot _boot;
+    using UnityEngine;
 
-    public void Init(Boot boot) {
-        _boot = boot;        
+    public class UI : MonoBehaviour
+    {
+        private Boot _boot;
+
+        public void Init(Boot boot) {
+            _boot = boot;        
+        }
+
     }
-
 }

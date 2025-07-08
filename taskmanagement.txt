@@ -3,9 +3,8 @@
 Задачи:
 
 Мир как граф локаций:
-Класс Location (ID, Type, ConnectedLocationsIDs[]).
+Класс Location (ID, Type, ConnectedLocationsIDs[]). + 
 Создать 5 локаций: Home_NPC1, Work_Shop, Commercial_Mall, Bar, Street (связи: Улица соединяет все здания).
-Расширение позже: Добавить свойства (безопасность, освещенность), зоны влияния.
 
 Базовый NPC:
 Класс NPCData (Name, HomeLocationID, WorkLocationID).

@@ -1,22 +1,22 @@
-using UnityEngine;
-
-
-public class Session : MonoBehaviour
+namespace Assets.Scripts
 {
-    private Boot _boot;
+    using UnityEngine;
 
-    public void Init(Boot boot) {
-        _boot = boot;
-    }
+    public class Session : MonoBehaviour
+    {
+        private Boot _boot;
 
-    public void SessionStart() {
-    }
+        public void Init(Boot boot) {
+            _boot = boot;
+        }
 
-    public void SessionEnd() { 
-        
-    }
+        public void SessionStart() {
+        }
 
-    public void WinCheck() {
-       
+        public void SessionEnd() { 
+        }
+
+        public void WinCheck() {
+        }
     }
 }
