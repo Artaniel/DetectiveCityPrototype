@@ -7,11 +7,6 @@ public class Root : MonoBehaviour
 
     private void Awake() {
         DontDestroyOnLoad(this.gameObject);
-        bootChannel.OnBootCreated += OnBootCreated;
-    }
-
-    private void OnDestroy() {
-        bootChannel.OnBootCreated -= OnBootCreated;
     }
 
     private void OnBootCreated(Boot boot) {
