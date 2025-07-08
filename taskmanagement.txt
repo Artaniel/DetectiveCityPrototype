@@ -12,7 +12,7 @@
 2 тестовых NPC: Обычный Джо (Home=Home_NPC1, Work=Work_Shop), Жулик Боб (Home=Home_NPC1, Work=None).
 
 Система времени:
-Класс WorldState (CurrentTimeInMinutes, Locations[], NPCs[]).
+Класс WorldState (CurrentTimeInMinutes, Locations[], NPCs[]). +
 Упрощенный "движок времени": цикл, увеличивающий CurrentTimeInMinutes на 1 каждую секунду реального времени.
 
 Отладка:

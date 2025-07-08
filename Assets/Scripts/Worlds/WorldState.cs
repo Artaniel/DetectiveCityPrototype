@@ -1,6 +1,7 @@
 namespace Assets.Scripts.Worlds
 {
     using System.Collections.Generic;
+    using Scripts.NPC;
 
     public class WorldState
     {
@@ -9,7 +10,7 @@ namespace Assets.Scripts.Worlds
 
         public int CurrentTimeInMinutes;
         public List<Location> Locations = new List<Location>();
-        //public List<NPC> NPCs = new List<NPC>();
+        public List<NPC> NPCs = new List<NPC>();
         //public List<CrimeEvent> ActiveCrimes = new List<CrimeEvent>();
 
         public void Init(Boot boot, World world){
