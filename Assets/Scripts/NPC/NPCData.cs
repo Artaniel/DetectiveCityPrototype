@@ -7,8 +7,8 @@ namespace Assets.Scripts.NPC
 
     public class NPCData : MonoBehaviour
     {
-        public Boot _boot;
-        public NPC _npc;
+        private Boot _boot;
+        private NPC _npc;
 
         public string characterName;
         public Location homeLocation;

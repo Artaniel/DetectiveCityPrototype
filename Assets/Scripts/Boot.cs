@@ -21,9 +21,8 @@ namespace Assets.Scripts
 
 
         private void Awake() {
-            bootChannel.BootCreatedSignal(this);
-            mainCamera = Camera.main;
-            ui.Init(this);
+            bootChannel.BootCreatedSignal(this); 
+            if (!mainCamera) mainCamera = Camera.main; 
             sound.Init(this);
             monetization.Init(this);
             session.Init(this);

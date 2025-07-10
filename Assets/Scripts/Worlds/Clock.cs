@@ -4,9 +4,9 @@ namespace Assets.Scripts.Worlds
 
     public class Clock : MonoBehaviour
     {
-        public Boot _boot;
-        public World _world;
-        public WorldState _state;
+        private Boot _boot;
+        private World _world;
+        private WorldState _state;
 
         public float minuteTickInterval = 1f;
         public float timeScale = 1f;

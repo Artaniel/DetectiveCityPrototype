@@ -5,8 +5,8 @@ namespace Assets.Scripts.NPC
 
     public class NPCState : MonoBehaviour
     {
-        public Boot _boot;
-        public NPC _npc;
+        private Boot _boot;
+        private NPC _npc;
 
         public string currentLocationID;
         public float hunger;

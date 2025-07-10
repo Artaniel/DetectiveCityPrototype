@@ -5,8 +5,8 @@ namespace Assets.Scripts.NPC
 
     public class NPC : MonoBehaviour
     {
-        public Boot _boot;
-        public World _world;
+        private Boot _boot;
+        private World _world;
 
         public NPCData data;
         public NPCState state;
