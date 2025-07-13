@@ -3,28 +3,26 @@ namespace Assets.Scripts.Worlds
     using UnityEngine;
     using System.Collections.Generic;
 
-    public enum LocationType {
+    
+
+    public class Location : MonoBehaviour
+    {
+        private Boot _boot;
+        public enum LocationType {
         Home,
         Work,
         Commercial,
         Bar,
         Street
-    }
+        }
+        
+        public string id;
+        public LocationType type;
+        public List<Location> connectedLocations = new List<Location>();
 
-    public class Location : MonoBehaviour
-    {
-        [SerializeField] private string id;
-        [SerializeField] private LocationType type;
-        [SerializeField] private List<string> connectedLocationsIDs = new List<string>();
-
-        private Boot _boot;
 
         public void Init(Boot boot) {
             _boot = boot;
         }
-
-        public string ID => id;
-        public LocationType Type => type;
-        public List<string> ConnectedLocationsIDs => connectedLocationsIDs;
     }
 }
