@@ -1,6 +1,7 @@
 namespace Assets.Scripts
 {
     using UnityEngine;
+    using UnityEngine.SceneManagement;
 
     public class Root : MonoBehaviour
     {
@@ -9,6 +10,8 @@ namespace Assets.Scripts
 
         private void Awake() {
             DontDestroyOnLoad(gameObject);
+            bootChannel.root = this;
+            SceneManager.LoadScene("Main");
         }
 
         public void OnBootCreated(Boot boot) {

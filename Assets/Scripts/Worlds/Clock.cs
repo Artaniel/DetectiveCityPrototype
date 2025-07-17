@@ -10,7 +10,7 @@ namespace Assets.Scripts.Worlds
 
         public float minuteTickInterval = 1f;
         public float timeScale = 1f;
-        private float tickTimer;
+        public float tickTimer;
 
         public void Init(Boot boot, World world) {
             _boot = boot;
@@ -18,7 +18,7 @@ namespace Assets.Scripts.Worlds
             _state = world.state;
         }
 
-        private void FixedUpdate() {
+        public void ManualFixedUpdate() {
             tickTimer += Time.fixedDeltaTime * timeScale;
             if (tickTimer >= minuteTickInterval) {
                 tickTimer -= minuteTickInterval;
@@ -28,7 +28,7 @@ namespace Assets.Scripts.Worlds
         }
 
         private void MinuteTick() {
-            
+            _world.npcFactory.TickUpdate(1f);
         }
     }
 }

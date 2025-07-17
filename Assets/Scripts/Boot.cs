@@ -2,6 +2,7 @@ namespace Assets.Scripts
 {
     using UnityEngine;
     using Assets.Scripts.Worlds;
+    using UnityEngine.SceneManagement;
 
     public class Boot : MonoBehaviour
     {    
@@ -9,23 +10,19 @@ namespace Assets.Scripts
         public SceneBootChannel bootChannel;
 
         public UI.UI ui;
-        public Session session;
         public Camera mainCamera;
-        public Health health;
-        public Sound sound;
-        public Monetization monetization;
-        public Saveloading saveloading;
 
         public Library library;
         public World world;
 
 
         private void Awake() {
+            if (bootChannel.root == null) {
+                SceneManager.LoadScene("BootStrap");
+                return;
+            }
             bootChannel.BootCreatedSignal(this); 
             if (!mainCamera) mainCamera = Camera.main; 
-            sound.Init(this);
-            monetization.Init(this);
-            session.Init(this);
             
             world.Init(this);
         }
@@ -34,8 +31,10 @@ namespace Assets.Scripts
             _root = root;
         }
 
-        private void Start() {
-            saveloading.Init(this);
+        public void FixedUpdate(){
+            world.clock.ManualFixedUpdate();
+
         }
+
     }
 }

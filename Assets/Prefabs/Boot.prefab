@@ -67,6 +67,7 @@ Transform:
   - {fileID: 8319028749055915}
   - {fileID: 5929381606136707599}
   - {fileID: 8867584992687463940}
+  - {fileID: 6936913075499629337}
   m_Father: {fileID: 5758941920154984874}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2748694324204835156
@@ -83,6 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 4022087844995742519}
   clock: {fileID: 6053044220829590974}
+  npcFactory: {fileID: 5816046172816753666}
 --- !u!1 &5320917346242879552
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,12 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bootChannel: {fileID: 11400000, guid: 9a711e11274f79d4cb045b5c6daba96b, type: 2}
   ui: {fileID: 0}
-  session: {fileID: 0}
   mainCamera: {fileID: 0}
-  health: {fileID: 0}
-  sound: {fileID: 0}
-  monetization: {fileID: 0}
-  saveloading: {fileID: 0}
   library: {fileID: 11400000, guid: b3858dd8375e43a49b16fa218c7be3fc, type: 2}
   world: {fileID: 2748694324204835156}
 --- !u!1 &5753723761265029071
@@ -269,7 +266,53 @@ MonoBehaviour:
   - {fileID: 9220523784419498604}
   - {fileID: 6136814869753777757}
   - {fileID: 3660069440884798373}
-  npcs: []
+  npcs:
+  - {fileID: 5535075101806707393}
+  - {fileID: 8917302472157585670}
+--- !u!1 &7619524309084736733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6936913075499629337}
+  - component: {fileID: 5816046172816753666}
+  m_Layer: 0
+  m_Name: NpcFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6936913075499629337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7619524309084736733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3143285086955961618}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5816046172816753666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7619524309084736733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027dd582fcc00d149b33ac134b4aeba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &606384670160059220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -432,6 +475,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+--- !u!114 &5535075101806707393 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1053064781101890606, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+  m_PrefabInstance: {fileID: 4777674531848404719}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d25e00e5312cac42abddfae3a0bcc95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9175771253951787312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4403208698857017311, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
@@ -758,3 +812,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4403208698857017311, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
   m_PrefabInstance: {fileID: 8457095501067001128}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8917302472157585670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1053064781101890606, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+  m_PrefabInstance: {fileID: 8457095501067001128}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d25e00e5312cac42abddfae3a0bcc95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
