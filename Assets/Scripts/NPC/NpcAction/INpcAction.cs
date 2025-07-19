@@ -4,11 +4,11 @@ namespace Assets.Scripts.NPC.NpcAction
 
     public interface INpcAction
     {
-        void Init(NPC npc);
+        void Init(Boot boot, NPC npc);
         bool CanPerform();
         float GetUtility();
         void Execute();
-        void Update();
+        void TickUpdate(float deltaTime);
         bool IsComplete();
     }
 }

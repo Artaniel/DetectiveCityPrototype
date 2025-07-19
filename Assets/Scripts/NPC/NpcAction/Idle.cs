@@ -5,12 +5,14 @@ namespace Assets.Scripts.NPC.NpcAction
 {
     public class Idle : MonoBehaviour, INpcAction
     {
+        private Boot _boot;
+        private NPC _npc;
         public bool isComplete;
         public float idleUtility = 0.1f;
-        private NPC _npc;
 
-        public void Init(NPC npc) {
+        public void Init(Boot boot, NPC npc) {
             _npc = npc;
+            _boot = boot;
         }
 
         public bool CanPerform() {
@@ -26,7 +28,7 @@ namespace Assets.Scripts.NPC.NpcAction
             _npc.state.currentActivity = "Idle";
         }
 
-        public void Update() {            
+        public void TickUpdate(float deltaTime) {            
         }
 
         public bool IsComplete() {

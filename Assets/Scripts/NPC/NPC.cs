@@ -20,7 +20,7 @@ namespace Assets.Scripts.NPC
             data.Init(boot, this);
             state.Init(boot, this);
             metabolism.Init(boot, this);
-            ai.Init(this);
+            ai.Init(boot, this);
         }
 
         public void TickUpdate(float deltaTime) {

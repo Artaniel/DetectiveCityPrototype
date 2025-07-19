@@ -24,9 +24,11 @@
    ```csharp
    public class NpcMetabolism : MonoBehaviour
    {
+       private Boot _boot;
        private NpcState _npcState;
 
-       public void Init(NpcState npcState) {
+       public void Init(Boot boot, NpcState npcState) {
+           _boot = boot;
            _npcState = npcState;
        }
 
@@ -39,4 +41,18 @@
    - Прямой доступ к публичным полям других компонентов вне Init не допускается.
 
 7. Не используем var, расписываем имя типа полностью.
+
+8. Инициализация зависимостей через Boot:
+   - Все компоненты, которые требуют инициализации, всегда принимают ссылку на Boot в своей Init-функции, даже если прямо сейчас Boot не используется.
+   - Сигнатура Init всегда следующая:
+     public void Init(Boot boot, ...)
+   - Это позволяет в любой точке кода получить доступ к глобальным сервисам и объектам через boot (например, boot.world, boot.locationFactory и т.д.).
+   - Не допускается создавать отдельные Init без Boot или хранить Boot только в некоторых компонентах — Boot должен быть доступен везде через DI.
+   - Пример:
+     public void Init(Boot boot, NPC npc) {
+         _boot = boot;
+         _npc = npc;
+         // ...
+     } 
+     
 (дополнять по мере необходимости) 
