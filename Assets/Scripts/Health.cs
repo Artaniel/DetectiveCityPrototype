@@ -20,7 +20,7 @@ namespace Assets.Scripts
 
 		public virtual void Damage(float value) {
 			if (isImmune || isDead) return;
-			HP = Mathf.Clamp(HP - value, 0, maxHP);
+			HP = Mathf.Clamp(HP - value, 0, maxHP);			
 			if (HP <= 0)
 				Death();
 			else

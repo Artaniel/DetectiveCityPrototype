@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2048474440433934571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3204454994004037060}
+  - component: {fileID: 2409298242695620674}
+  m_Layer: 0
+  m_Name: AI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3204454994004037060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048474440433934571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4403208698857017311}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2409298242695620674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048474440433934571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605ef72986305bc4e82317621eb88eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3226344499937399754
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54129ca397289f74cba5da08b92f618c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLocationID: 
+  currentLocation: {fileID: 0}
   hunger: 0
   energy: 0
   currentActivity: 
@@ -176,6 +220,7 @@ Transform:
   - {fileID: 8525655672658712641}
   - {fileID: 6749778964875797459}
   - {fileID: 288975789925246524}
+  - {fileID: 3204454994004037060}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1053064781101890606
@@ -193,3 +238,4 @@ MonoBehaviour:
   data: {fileID: 5223236789767009129}
   state: {fileID: 9148377041282856185}
   metabolism: {fileID: 8502655972043181476}
+  ai: {fileID: 2409298242695620674}
