@@ -3,6 +3,7 @@ namespace Assets.Scripts
     using UnityEngine;
     using Assets.Scripts.Worlds;
     using UnityEngine.SceneManagement;
+    using Assets.Scripts.NPC; 
 
     public class Boot : MonoBehaviour
     {    
@@ -14,6 +15,7 @@ namespace Assets.Scripts
 
         public Library library;
         public World world;
+        public AiSystem aiSystem;
 
 
         private void Awake() {
@@ -24,7 +26,8 @@ namespace Assets.Scripts
             bootChannel.BootCreatedSignal(this); 
             if (!mainCamera) mainCamera = Camera.main; 
             
-            world.Init(this);
+            world.Init(this);            
+            aiSystem.Init(this);            
         }
 
         public void Init(Root root) {
@@ -33,7 +36,6 @@ namespace Assets.Scripts
 
         public void FixedUpdate(){
             world.clock.ManualFixedUpdate();
-
         }
 
     }
