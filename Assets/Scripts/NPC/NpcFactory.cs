@@ -13,13 +13,13 @@ namespace Assets.Scripts.NPC
         public void Init(Boot boot, World world) {
             _boot = boot;
             _world = world;
-            foreach (NPC npc in _world.state.npcs){
+            foreach (Npc npc in _world.state.npcs){
                 npc.Init(_boot, _world);
             }
         }
 
         public void TickUpdate(float deltaTime) {
-            foreach (NPC npc in _world.state.npcs){
+            foreach (Npc npc in _world.state.npcs){
                 npc.TickUpdate(deltaTime);
             }
         }

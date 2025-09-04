@@ -5,11 +5,11 @@ namespace Assets.Scripts.NPC
     public class NpcMetabolism : MonoBehaviour
     {
         private Boot _boot;
-        private NPC _npc;
+        private Npc _npc;
         public float hungerSpeed = 0.001f;
         public float energyExhaustionSpeed = 0.001f;
 
-        public void Init(Boot boot, NPC npc) {            
+        public void Init(Boot boot, Npc npc) {            
             _boot = boot;
             _npc = npc;
         }

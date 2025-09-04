@@ -4,7 +4,7 @@ namespace Assets.Scripts.NPC.NpcAction
 
     public interface INpcAction
     {
-        void Init(Boot boot, NPC npc);
+        void Init(Boot boot, Npc npc);
         bool CanPerform();
         float GetUtility();
         void Execute();

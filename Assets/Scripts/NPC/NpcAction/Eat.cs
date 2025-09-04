@@ -6,11 +6,11 @@ namespace Assets.Scripts.NPC.NpcAction
     public class Eat : MonoBehaviour, INpcAction
     {
         private Boot _boot;
-        private NPC _npc;
+        private Npc _npc;
         public bool isComplete;
         public float hungerReductionRate = 0.1f;
         
-        public void Init(Boot boot, NPC npc) {
+        public void Init(Boot boot, Npc npc) {
             _boot = boot;
             _npc = npc;
         }

@@ -6,11 +6,11 @@ namespace Assets.Scripts.NPC.NpcAction
     public class Idle : MonoBehaviour, INpcAction
     {
         private Boot _boot;
-        private NPC _npc;
+        private Npc _npc;
         public bool isComplete;
         public float idleUtility = 0.1f;
 
-        public void Init(Boot boot, NPC npc) {
+        public void Init(Boot boot, Npc npc) {
             _npc = npc;
             _boot = boot;
         }

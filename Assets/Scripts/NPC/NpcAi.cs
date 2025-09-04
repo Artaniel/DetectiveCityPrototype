@@ -8,11 +8,11 @@ namespace Assets.Scripts.NPC
     public class NpcAi : MonoBehaviour
     {
         private Boot _boot;
-        private NPC _npc;
+        private Npc _npc;
         public List<INpcAction> actions = new List<INpcAction>();
         public INpcAction currentAction;
 
-        public void Init(Boot boot, NPC npc) {
+        public void Init(Boot boot, Npc npc) {
             _boot = boot;
             _npc = npc;
             foreach (INpcAction action in GetComponents<INpcAction>()) {

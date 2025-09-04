@@ -4,6 +4,7 @@ namespace Assets.Scripts.NPC
     using UnityEngine;
     using Assets.Scripts.Worlds;
     using Assets.Scripts;
+    using Assets.Scripts.NPC.NpcAction;
 
     public class AiSystem : MonoBehaviour
     {

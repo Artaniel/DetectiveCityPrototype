@@ -8,7 +8,7 @@ namespace Assets.Scripts.NPC
     public class NPCData : MonoBehaviour
     {
         private Boot _boot;
-        private NPC _npc;
+        private Npc _npc;
 
         public string characterName;
         public Location homeLocation;
@@ -17,7 +17,7 @@ namespace Assets.Scripts.NPC
         public int workEndTime;
         public Dictionary<string, float> traits = new();
 
-        public void Init(Boot boot, NPC npc) {
+        public void Init(Boot boot, Npc npc) {
             _boot = boot;
             _npc = npc;
         }

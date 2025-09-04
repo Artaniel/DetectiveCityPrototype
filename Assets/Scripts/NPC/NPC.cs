@@ -4,7 +4,7 @@ namespace Assets.Scripts.NPC
     using Assets.Scripts.Worlds;
     using Assets.Scripts.NPC;
 
-    public class NPC : MonoBehaviour
+    public class Npc : MonoBehaviour
     {
         private Boot _boot;
         private World _world;

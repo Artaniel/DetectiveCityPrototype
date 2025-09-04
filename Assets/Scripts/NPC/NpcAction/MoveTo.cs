@@ -9,7 +9,7 @@ namespace Assets.Scripts.NPC.NpcAction
     {
         
         private Boot _boot;
-        private NPC _npc;
+        private Npc _npc;
         private LocationFactory _locationFactory;
         public bool isComplete;
         public Location targetLocation;
@@ -17,7 +17,7 @@ namespace Assets.Scripts.NPC.NpcAction
         private List<Location> _path = new List<Location>();
         private int _currentStep = 0;
 
-        public void Init(Boot boot, NPC npc) {
+        public void Init(Boot boot, Npc npc) {
             _boot = boot;
             _npc = npc;
             _locationFactory = _boot.world.locationFactory;

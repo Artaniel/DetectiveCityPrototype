@@ -7,14 +7,14 @@ namespace Assets.Scripts.NPC
     public class NPCState : MonoBehaviour
     {
         private Boot _boot;
-        private NPC _npc;
+        private Npc _npc;
 
         public Location currentLocation;
         public float hunger;
         public float energy;
         public string currentActivity;
 
-        public void Init(Boot boot, NPC npc) {
+        public void Init(Boot boot, Npc npc) {
             _boot = boot;
             _npc = npc;
         }
