@@ -1,4 +1,5 @@
 using Assets.Scripts.NPC;
+using Assets.Scripts.Worlds;
 using UnityEngine;
 
 namespace Assets.Scripts.NPC.NpcAction
@@ -16,7 +17,7 @@ namespace Assets.Scripts.NPC.NpcAction
         }
 
         public bool CanPerform() {
-            return _npc.state.currentLocation.id == "HomeNPC1";
+            return _npc.state.currentLocation == _npc.data.homeLocation;
         }
 
         public float GetUtility() {
@@ -41,6 +42,10 @@ namespace Assets.Scripts.NPC.NpcAction
 
         public bool IsComplete() {
             return isComplete;
+        }
+
+        public Location GetRequiredLocation() {
+            return _npc.data.homeLocation;
         }
     }
 }

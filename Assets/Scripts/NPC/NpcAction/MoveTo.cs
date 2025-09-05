@@ -48,7 +48,6 @@ namespace Assets.Scripts.NPC.NpcAction
 
         public void TickUpdate(float deltaTime) {
             if (isComplete || _path.Count == 0) return;
-            // Перемещаемся на следующий шаг
             if (_currentStep < _path.Count) {
                 _npc.state.currentLocation = _path[_currentStep];
                 _currentStep++;
@@ -70,6 +69,10 @@ namespace Assets.Scripts.NPC.NpcAction
                 _path = _locationFactory.FindPath(_npc.state.currentLocation, targetLocation);
                 _currentStep = 0;
             }
+        }
+
+        public Location GetRequiredLocation() {
+            return null; 
         }
     }
 }

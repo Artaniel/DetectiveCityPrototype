@@ -1,4 +1,5 @@
 using Assets.Scripts.NPC;
+using Assets.Scripts.Worlds;
 using UnityEngine;
 
 namespace Assets.Scripts.NPC.NpcAction
@@ -33,6 +34,10 @@ namespace Assets.Scripts.NPC.NpcAction
 
         public bool IsComplete() {
             return isComplete;
+        }
+
+        public Location GetRequiredLocation() {
+            return null;
         }
     }
 }
