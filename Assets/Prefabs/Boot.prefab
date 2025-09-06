@@ -129,7 +129,7 @@ MonoBehaviour:
   state: {fileID: 4022087844995742519}
   clock: {fileID: 6053044220829590974}
   npcFactory: {fileID: 5816046172816753666}
-  locationFactory: {fileID: 0}
+  locationFactory: {fileID: 8150846853819502326}
 --- !u!1 &5320917346242879552
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5929381606136707599}
+  - component: {fileID: 8150846853819502326}
   m_Layer: 0
   m_Name: Locations
   m_TagString: Untagged
@@ -264,6 +265,18 @@ Transform:
   - {fileID: 4831127786577125618}
   m_Father: {fileID: 3143285086955961618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8150846853819502326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5768416676113492924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2434e8b1d25f149a8ddd5a0742f896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7212700102225755003
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Npc1
       objectReference: {fileID: 0}
+    - target: {fileID: 9148377041282856185, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+      propertyPath: currentLocation
+      value: 
+      objectReference: {fileID: 3660069440884798373}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -882,6 +899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Npc2
       objectReference: {fileID: 0}
+    - target: {fileID: 9148377041282856185, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+      propertyPath: currentLocation
+      value: 
+      objectReference: {fileID: 6136814869753777757}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

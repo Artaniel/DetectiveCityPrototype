@@ -10,22 +10,75 @@ namespace Assets.Scripts.NPC
     {
         private Boot _boot;
         public List<INpcAction> actions = new List<INpcAction>();
+        private MoveTo moveToAction;
 
         public void Init(Boot boot) {
             _boot = boot;
+            CreateBaseActions();
+            foreach (INpcAction action in actions) {
+                action.Init(boot, null);
+            }
         }
 
-        // Placeholder for the AI tick update, which will be called by NPCs
+        private void CreateBaseActions() {
+            Idle idle = gameObject.AddComponent<Idle>();
+            Eat eat = gameObject.AddComponent<Eat>();
+            MoveTo moveTo = gameObject.AddComponent<MoveTo>();
+
+            actions.Add(idle);
+            actions.Add(eat);
+            actions.Add(moveTo);
+            moveToAction = moveTo;
+        }
+
         public void TickUpdate(Npc npc, float deltaTime) {
-            // This method will contain the logic for selecting and executing actions for a given NPC.
-            // For now, it's a placeholder.
+            if (npc.state.currentAction == null || npc.state.isActionComplete) {
+                INpcAction previousAction = npc.state.currentAction;
+                npc.state.currentAction = SelectBestAction(npc);
+                
+                if (npc.state.currentAction != null) {
+                    string previousActionName = previousAction?.GetType().Name ?? "None";
+                    string currentActionName = npc.state.currentAction.GetType().Name;
+                    float utility = npc.state.currentAction.GetUtility();
+                    
+                    Debug.Log($"[{_boot.world.state.currentTimeInMinutes}] {npc.data.characterName}: " +
+                             $"State change {previousActionName} to {currentActionName} (Utility={utility:F2})");
+                    
+                    npc.state.currentAction.Execute();
+                    npc.state.isActionComplete = false;
+                }
+            } else {
+                npc.state.currentAction.TickUpdate(deltaTime);
+                npc.state.isActionComplete = npc.state.currentAction.IsComplete();
+            }
         }
 
-        // Placeholder for selecting the best action for an NPC
         public INpcAction SelectBestAction(Npc npc) {
-            // This method will contain the utility AI logic to choose the best action.
-            // For now, it's a placeholder.
-            return null;
+            INpcAction best = null;
+            float utility = 0f;
+            float bestUtility = float.MinValue;
+            
+            foreach (INpcAction action in actions) {
+                if (action.CanPerform()) {
+                    utility = action.GetUtility();
+                    if (utility <= bestUtility) continue;
+                    bestUtility = utility;
+                    best = action;                    
+                    continue;
+                }
+                    
+                Location requiredLocation = action.GetRequiredLocation();
+                if (requiredLocation == null || requiredLocation == npc.state.currentLocation) continue;
+
+                moveToAction.SetTarget(requiredLocation);
+                utility = action.GetUtility();
+                if (utility > bestUtility) {
+                    bestUtility = utility;
+                    best = moveToAction;
+                }
+            }
+            
+            return best;
         }
     }
 }
