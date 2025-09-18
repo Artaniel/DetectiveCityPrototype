@@ -10,7 +10,10 @@ namespace Assets.Scripts.NPC
     {
         private Boot _boot;
         public List<INpcAction> actions = new List<INpcAction>();
-        private MoveTo moveToAction;
+        public Idle idle;
+        public MoveTo moveTo;
+        public Eat eat;
+        public Work work;
 
         public void Init(Boot boot) {
             _boot = boot;
@@ -21,14 +24,10 @@ namespace Assets.Scripts.NPC
         }
 
         private void CreateBaseActions() {
-            Idle idle = gameObject.AddComponent<Idle>();
-            Eat eat = gameObject.AddComponent<Eat>();
-            MoveTo moveTo = gameObject.AddComponent<MoveTo>();
-
             actions.Add(idle);
             actions.Add(eat);
             actions.Add(moveTo);
-            moveToAction = moveTo;
+            actions.Add(work);
         }
 
         public void TickUpdate(Npc npc, float deltaTime) {
@@ -70,11 +69,11 @@ namespace Assets.Scripts.NPC
                 Location requiredLocation = action.GetRequiredLocation();
                 if (requiredLocation == null || requiredLocation == npc.state.currentLocation) continue;
 
-                moveToAction.SetTarget(requiredLocation);
+                moveTo.SetTarget(requiredLocation);
                 utility = action.GetUtility();
                 if (utility > bestUtility) {
                     bestUtility = utility;
-                    best = moveToAction;
+                    best = moveTo;
                 }
             }
             

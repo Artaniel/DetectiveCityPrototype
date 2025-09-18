@@ -12,10 +12,11 @@ namespace Assets.Scripts.NPC
 
         public string characterName;
         public Location homeLocation;
-        public Location workLocation;
-        public int workStartTime;
-        public int workEndTime;
         public Dictionary<string, float> traits = new();
+
+        public Location workLocation;
+        public float workStartTime;
+        public float workEndTime;
 
         public void Init(Boot boot, Npc npc) {
             _boot = boot;
