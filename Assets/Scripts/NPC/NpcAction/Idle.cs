@@ -7,36 +7,35 @@ namespace Assets.Scripts.NPC.NpcAction
     public class Idle : MonoBehaviour, INpcAction
     {
         private Boot _boot;
-        private Npc _npc;
-        public bool isComplete;
+        private AiSystem _ai;
         public float idleUtility = 0.1f;
 
-        public void Init(Boot boot, Npc npc) {
-            _npc = npc;
+        public void Init(Boot boot, AiSystem ai) {
+            _ai = ai;
             _boot = boot;
         }
 
-        public bool CanPerform() {
+        public bool CanPerform(Npc npc) {
             return true;
         }
 
-        public float GetUtility() {
+        public float GetUtility(Npc npc) {
             return idleUtility;
         }
 
-        public void Execute() {
-            isComplete = true;
-            _npc.state.currentActivity = "Idle";
+        public void Execute(Npc npc) {
+            npc.state.isActionComplete = true;
+            npc.state.currentActivity = "Idle";
         }
 
-        public void TickUpdate(float deltaTime) {            
+        public void TickUpdate(float deltaTime, Npc npc) {            
         }
 
-        public bool IsComplete() {
-            return isComplete;
+        public bool IsComplete(Npc npc) {
+            return npc.state.isActionComplete;
         }
 
-        public Location GetRequiredLocation() {
+        public Location GetRequiredLocation(Npc npc) {
             return null;
         }
     }

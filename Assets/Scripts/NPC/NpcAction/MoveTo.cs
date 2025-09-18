@@ -9,69 +9,67 @@ namespace Assets.Scripts.NPC.NpcAction
     {
         
         private Boot _boot;
-        private Npc _npc;
+        private AiSystem _ai;
         private LocationFactory _locationFactory;
-        public bool isComplete;
         public Location targetLocation;
         public float moveUtility = 0.5f;
         private List<Location> _path = new List<Location>();
         private int _currentStep = 0;
 
-        public void Init(Boot boot, Npc npc) {
+        public void Init(Boot boot, AiSystem ai) {
             _boot = boot;
-            _npc = npc;
             _locationFactory = _boot.world.locationFactory;
         }
 
-        public void SetTarget(Location location) {
+        public void SetTarget(Location location, Npc npc) {
             targetLocation = location;
-            isComplete = false;
+            npc.state.isActionComplete = false;
             _currentStep = 0;
-            CalculatePath();
+            CalculatePath(npc);
         }
 
-        public bool CanPerform() {
-            return targetLocation != null && _npc.state.currentLocation != targetLocation;
+        public bool CanPerform(Npc npc) {
+            return targetLocation != null && npc.state.currentLocation != targetLocation;
         }
 
-        public float GetUtility() {
+        public float GetUtility(Npc npc) {
             return moveUtility;
         }
 
-        public void Execute() {
-            isComplete = false;
-            _npc.state.currentActivity = $"MoveTo({targetLocation?.id})";
+        public void Execute(Npc npc) {
+            npc.state.isActionComplete = false;
+            npc.state.currentActivity = $"MoveTo({targetLocation?.id})";
             if (_path.Count == 0) {
-                CalculatePath();
+                CalculatePath(npc);
             }
         }
 
-        public void TickUpdate(float deltaTime) {
-            if (isComplete || _path.Count == 0) return;
+        public void TickUpdate(float deltaTime, Npc npc) {
+            if (npc.state.isActionComplete || _path.Count == 0) return;
             if (_currentStep < _path.Count) {
-                _npc.state.currentLocation = _path[_currentStep];
+                npc.state.currentLocation = _path[_currentStep];
                 _currentStep++;
-                if (_npc.state.currentLocation == targetLocation) {
-                    isComplete = true;
+                if (npc.state.currentLocation == targetLocation) {
+                    npc.state.isActionComplete = true;
                 }
             } else {
-                isComplete = true;
+                npc.state.isActionComplete = true;
             }
         }
 
-        public bool IsComplete() {
-            return isComplete;
+        public bool IsComplete(Npc npc) {
+            return npc.state.isActionComplete;
         }
 
-        private void CalculatePath() {
+        private void CalculatePath(Npc npc) {
             _path.Clear();
             if (_locationFactory != null) {
-                _path = _locationFactory.FindPath(_npc.state.currentLocation, targetLocation);
+                _path = _locationFactory.FindPath(npc.state.currentLocation, targetLocation);
                 _currentStep = 0;
             }
         }
 
-        public Location GetRequiredLocation() {
+        public Location GetRequiredLocation(Npc npc) {
             return null; 
         }
     }

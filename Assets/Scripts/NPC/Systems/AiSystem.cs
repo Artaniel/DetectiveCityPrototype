@@ -38,17 +38,17 @@ namespace Assets.Scripts.NPC
                 if (npc.state.currentAction != null) {
                     string previousActionName = previousAction?.GetType().Name ?? "None";
                     string currentActionName = npc.state.currentAction.GetType().Name;
-                    float utility = npc.state.currentAction.GetUtility();
+                    float utility = npc.state.currentAction.GetUtility(npc);
                     
                     Debug.Log($"[{_boot.world.state.currentTimeInMinutes}] {npc.data.characterName}: " +
                              $"State change {previousActionName} to {currentActionName} (Utility={utility:F2})");
                     
-                    npc.state.currentAction.Execute();
+                    npc.state.currentAction.Execute(npc);
                     npc.state.isActionComplete = false;
                 }
             } else {
-                npc.state.currentAction.TickUpdate(deltaTime);
-                npc.state.isActionComplete = npc.state.currentAction.IsComplete();
+                npc.state.currentAction.TickUpdate(deltaTime, npc);
+                npc.state.isActionComplete = npc.state.currentAction.IsComplete(npc);
             }
         }
 
@@ -58,19 +58,19 @@ namespace Assets.Scripts.NPC
             float bestUtility = float.MinValue;
             
             foreach (INpcAction action in actions) {
-                if (action.CanPerform()) {
-                    utility = action.GetUtility();
+                if (action.CanPerform(npc)) {
+                    utility = action.GetUtility(npc);
                     if (utility <= bestUtility) continue;
                     bestUtility = utility;
                     best = action;                    
                     continue;
                 }
                     
-                Location requiredLocation = action.GetRequiredLocation();
+                Location requiredLocation = action.GetRequiredLocation(npc);
                 if (requiredLocation == null || requiredLocation == npc.state.currentLocation) continue;
 
-                moveTo.SetTarget(requiredLocation);
-                utility = action.GetUtility();
+                moveTo.SetTarget(requiredLocation, npc);
+                utility = action.GetUtility(npc);
                 if (utility > bestUtility) {
                     bestUtility = utility;
                     best = moveTo;

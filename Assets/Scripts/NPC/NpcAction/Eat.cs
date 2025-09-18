@@ -7,45 +7,44 @@ namespace Assets.Scripts.NPC.NpcAction
     public class Eat : MonoBehaviour, INpcAction
     {
         private Boot _boot;
-        private Npc _npc;
-        public bool isComplete;
+        private AiSystem _ai;
         public float hungerReductionRate = 0.1f;
         
-        public void Init(Boot boot, Npc npc) {
+        public void Init(Boot boot, AiSystem ai) {
+            _ai = ai;
             _boot = boot;
-            _npc = npc;
         }
 
-        public bool CanPerform() {
-            return _npc.state.currentLocation == _npc.data.homeLocation;
+        public bool CanPerform(Npc npc) {
+            return npc.state.currentLocation == npc.data.homeLocation;
         }
 
-        public float GetUtility() {
-            return _npc.state.hunger / 100f;
+        public float GetUtility(Npc npc) {
+            return npc.state.hunger / 100f;
         }
 
-        public void Execute() {
-            isComplete = false;
-            _npc.state.currentActivity = "Eating";
+        public void Execute(Npc npc) {
+            npc.state.isActionComplete = false;
+            npc.state.currentActivity = "Eating";
         }
 
-        public void TickUpdate(float deltaTime) {
-            if (isComplete) return;
+        public void TickUpdate(float deltaTime, Npc npc) {
+            if (npc.state.isActionComplete) return;
                         
-            _npc.state.hunger -= hungerReductionRate;
+            npc.state.hunger -= hungerReductionRate;
             
-            if (_npc.state.hunger <= 0) {
-                _npc.state.hunger = 0;
-                isComplete = true;
+            if (npc.state.hunger <= 0) {
+                npc.state.hunger = 0;
+                npc.state.isActionComplete = true;
             }
         }
 
-        public bool IsComplete() {
-            return isComplete;
+        public bool IsComplete(Npc npc) {
+            return npc.state.isActionComplete;
         }
 
-        public Location GetRequiredLocation() {
-            return _npc.data.homeLocation;
+        public Location GetRequiredLocation(Npc npc) {
+            return npc.data.homeLocation;
         }
     }
 }

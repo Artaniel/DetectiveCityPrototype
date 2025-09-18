@@ -5,12 +5,12 @@ namespace Assets.Scripts.NPC.NpcAction
 
     public interface INpcAction
     {
-        void Init(Boot boot, Npc npc);
-        bool CanPerform();
-        float GetUtility();
-        void Execute();
-        void TickUpdate(float deltaTime);
-        bool IsComplete();
-        Location GetRequiredLocation(); 
+        void Init(Boot boot, AiSystem ai);
+        bool CanPerform(Npc npc);
+        float GetUtility(Npc npc);
+        void Execute(Npc npc);
+        void TickUpdate(float deltaTime, Npc npc);
+        bool IsComplete(Npc npc);
+        Location GetRequiredLocation(Npc npc); 
     }
 }
