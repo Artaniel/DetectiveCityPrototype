@@ -40,7 +40,7 @@ namespace Assets.Scripts.NPC.NpcAction
         }
 
         public bool IsComplete(Npc npc) {
-            return npc.state.isActionComplete;
+            return npc.state.hunger <= 0f;
         }
 
         public Location GetRequiredLocation(Npc npc) {
