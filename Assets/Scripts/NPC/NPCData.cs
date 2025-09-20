@@ -3,6 +3,7 @@ namespace Assets.Scripts.NPC
     using Assets.Scripts.NPC;
     using Assets.Scripts.Worlds;
     using System.Collections.Generic;
+    using Traits;
     using UnityEngine;
 
     public class NPCData : MonoBehaviour
@@ -12,7 +13,7 @@ namespace Assets.Scripts.NPC
 
         public string characterName;
         public Location homeLocation;
-        public Dictionary<string, float> traits = new();
+        public Dictionary<Trait, float> traits = new();
 
         public Location workLocation;
         public float workStartTime;
