@@ -38,8 +38,11 @@
   [+] Действие Work: CanPerform если есть WorkLocationID и сейчас время вблизи WorkStartTime.
   [+] Utility GoToWork, максимум в начале смены, 0 в конце, меняется линейно.
 [ ] Влияние черт:
-  [ ] Добавить в NPCData словарь Traits (например, Greedy)
-  [ ] Действие Steal. Возможно если есть трейт Greedy.
+  [+] Добавить в NPCData словарь Traits (например, Greedy)
+  [+] Действие Steal. Возможно если есть трейт Greedy.  [ ] CanPerform: НЕ дома И есть трейт Greedy > 0.5 И НЕТ трейта Criminal
+    [+] GetUtility: Trait.Greedy
+    [+] Execute: лог кражи + добавление трейта Criminal
+    [ ] Создать трейты: Greedy, Criminal (ScriptableObject)
   [ ] Для теста: У Жулика Боба нет работы, но если он в Commercial_Mall, то может выбрать Steal
 [ ] Действие Steal (заглушка):
   [ ] CanPerform: только если в локации типа Commercial и у NPC Trait.Greedy > 0.5
