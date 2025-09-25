@@ -97,7 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxUtility: 0
-  isComplete: 0
   energyExaustSpeed: 0
   minimalEnergy: 0.1
 --- !u!1 &3941082857927959015
@@ -177,7 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c7735787f482b4c9c611bd950c9ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isComplete: 0
   idleUtility: 0.1
 --- !u!1 &5193172931891951478
 GameObject:
@@ -223,7 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04cb76a3b408f24389fc424c39fd2f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isComplete: 0
   hungerReductionRate: 0.1
 --- !u!1 &5215918258193677906
 GameObject:
@@ -566,7 +563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1441e4b8296ba204e946b4cf39c4e5c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isComplete: 0
   targetLocation: {fileID: 0}
   moveUtility: 0.5
 --- !u!1 &8576111331646889266
@@ -1090,6 +1086,26 @@ PrefabInstance:
       propertyPath: characterName
       value: "\u0416\u0443\u043B\u0438\u043A \u0411\u043E\u0431"
       objectReference: {fileID: 0}
+    - target: {fileID: 5223236789767009129, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+      propertyPath: traitValues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223236789767009129, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+      propertyPath: traitsArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223236789767009129, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+      propertyPath: 'traitValues.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223236789767009129, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+      propertyPath: 'traitsArray.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ae587d4652bb9742bb97448778d3b0a, type: 2}
+    - target: {fileID: 5223236789767009129, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+      propertyPath: 'traitsArray.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 95ce54b78ea670e47815f7668e7f4a7c, type: 2}
     - target: {fileID: 6441581472468233279, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
       propertyPath: m_Name
       value: Npc2

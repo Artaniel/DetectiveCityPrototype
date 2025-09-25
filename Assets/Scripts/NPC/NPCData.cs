@@ -17,10 +17,10 @@ namespace Assets.Scripts.NPC
         public Location workLocation;
         public float workStartTime;
         public float workEndTime;
-        
+
         public Trait[] traitsArray;
         public float[] traitValues;
-        public Dictionary<Trait, float> traits;
+        private Dictionary<Trait, float> traits;
 
         public void Init(Boot boot, Npc npc) {
             _boot = boot;
@@ -36,7 +36,17 @@ namespace Assets.Scripts.NPC
                 else                    
                     traits.Add(traitsArray[i], 1f);
             }
+        }
 
+        public float GetTrait(Trait trait) {
+            if (!traits.ContainsKey(trait)) return 0;
+            return traits[trait];
+        }
+
+        public void SetTrait(Trait trait, float value = 1f){
+            if (!traits.ContainsKey(trait))
+                traits.Add(trait, value);
+            traits[trait] = value;
         }
     }
 } 

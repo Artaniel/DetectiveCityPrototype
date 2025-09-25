@@ -1,5 +1,6 @@
 using Assets.Scripts.NPC;
 using Assets.Scripts.Worlds;
+using Assets.Scripts.NPC.Traits;
 using UnityEngine;
 
 namespace Assets.Scripts.NPC.NpcAction
@@ -9,7 +10,7 @@ namespace Assets.Scripts.NPC.NpcAction
         private Boot _boot;
         private AiSystem _ai;
         public Trait greed;
-        public Traot criminalTrait;
+        public Trait criminalTrait;
         
         public void Init(Boot boot, AiSystem ai) {
             _ai = ai;
@@ -21,13 +22,13 @@ namespace Assets.Scripts.NPC.NpcAction
         }
 
         public float GetUtility(Npc npc) {
-            return npc.data.traits[greed] - npc.data.traits[criminalTrait];
+            return npc.data.GetTrait(greed) - npc.data.GetTrait(criminalTrait);
         }
 
         public void Execute(Npc npc) {
             npc.state.isActionComplete = true;
             npc.state.currentActivity = "Stealing";
-            npc.data.traits[criminalTrait] = 1.0f;
+            npc.data.SetTrait(criminalTrait, 1.0f);
             Debug.Log($"[{_boot.world.state.currentTimeInMinutes}] {npc.data.characterName}: Steal an item!");    
         }
 
