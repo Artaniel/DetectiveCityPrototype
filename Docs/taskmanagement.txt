@@ -37,25 +37,27 @@
   [+] Добавить в NPCData: WorkStartTime, WorkEndTime (например, 540 = 9:00)
   [+] Действие Work: CanPerform если есть WorkLocationID и сейчас время вблизи WorkStartTime.
   [+] Utility GoToWork, максимум в начале смены, 0 в конце, меняется линейно.
-[ ] Влияние черт:
+[+] Влияние черт:
   [+] Добавить в NPCData словарь Traits (например, Greedy)
   [+] Действие Steal. Возможно если есть трейт Greedy.  [ ] CanPerform: НЕ дома И есть трейт Greedy > 0.5 И НЕТ трейта Criminal
     [+] GetUtility: Trait.Greedy
     [+] Execute: лог кражи + добавление трейта Criminal
-    [ ] Создать трейты: Greedy, Criminal (ScriptableObject)
-  [ ] Для теста: У Жулика Боба нет работы, но если он в Commercial_Mall, то может выбрать Steal
-[ ] Действие Steal (заглушка):
-  [ ] CanPerform: только если в локации типа Commercial и у NPC Trait.Greedy > 0.5
-  [ ] Utility = Trait.Greedy * (1 - Голод/100) (жадность + голод толкают на риск)
-  [ ] Execute: пока просто лог: [Время] Боб: Украл предмет!
+    [+] Создать трейты: Greedy, Criminal (ScriptableObject)
+  [+] Для теста: У Жулика Боба нет работы, но есть жадность.
+[+] Действие Steal (заглушка):
+  [+] CanPerform: только если не дома
+  [+] Utility = Trait.Greedy
+  [+] Execute: пока просто лог: [Время] Боб: Украл предмет!
 
 Критерий успеха: NPC следуют расписанию. Черта "Greedy" вызывает уникальное поведение (логи воровства).
 
 Этап 3: Последствия и события
 
 Задачи:
-[ ] Инвентарь локаций:
-  [ ] Добавить в Location: Inventory Items[] (список ID предметов: "Food", "Vase", "Money")
+[+] Инвентарь локаций:
+  [+] Добавить класс Item
+  [+] Добавить в Location: Inventory Items[] (список ID предметов: "Food", "Vase", "Money")
+  [+] Добавить в NpcState Inventory
   [ ] Действие Steal теперь удаляет случайный предмет из инвентаря локации и добавляет NPC
 [ ] Генерация "криминальных событий":
   [ ] При краже создавать объект CrimeEvent: LocationID, StolenItemID, SuspectedNPCs[] (все NPC в локации в момент кражи)

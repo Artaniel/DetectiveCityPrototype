@@ -2,8 +2,7 @@ namespace Assets.Scripts.Worlds
 {
     using UnityEngine;
     using System.Collections.Generic;
-
-    
+    using Assets.Scripts.Items;
 
     public class Location : MonoBehaviour
     {
@@ -19,6 +18,7 @@ namespace Assets.Scripts.Worlds
         public string id;
         public LocationType type;
         public List<Location> connectedLocations = new List<Location>();
+        public List<Item> inventory;
 
 
         public void Init(Boot boot) {

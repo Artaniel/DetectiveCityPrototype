@@ -4,6 +4,8 @@ namespace Assets.Scripts.NPC
     using Assets.Scripts.Worlds;
     using UnityEngine;
     using Assets.Scripts.NPC.NpcAction;
+    using System.Collections.Generic;
+    using Assets.Scripts.Items;
 
     public class NPCState : MonoBehaviour
     {
@@ -16,6 +18,8 @@ namespace Assets.Scripts.NPC
         public string currentActivity;
         public INpcAction currentAction;
         public bool isActionComplete;
+
+        public List<Item> inventory;
 
         public void Init(Boot boot, Npc npc) {
             _boot = boot;
