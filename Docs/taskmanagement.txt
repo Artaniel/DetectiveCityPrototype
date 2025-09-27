@@ -58,7 +58,7 @@
   [+] Добавить класс Item
   [+] Добавить в Location: Inventory Items[] (список ID предметов: "Food", "Vase", "Money")
   [+] Добавить в NpcState Inventory
-  [ ] Действие Steal теперь удаляет случайный предмет из инвентаря локации и добавляет NPC
+  [+] Действие Steal теперь удаляет случайный предмет из инвентаря локации и добавляет NPC
 [ ] Генерация "криминальных событий":
   [ ] При краже создавать объект CrimeEvent: LocationID, StolenItemID, SuspectedNPCs[] (все NPC в локации в момент кражи)
   [ ] Хранить активные дела в WorldState.ActiveCrimes

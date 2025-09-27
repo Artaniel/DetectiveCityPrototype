@@ -24,5 +24,14 @@ namespace Assets.Scripts.Worlds
         public void Init(Boot boot) {
             _boot = boot;
         }
+
+        public Item GetRandomItem() {
+            if (inventory == null || inventory.Count == 0) {
+                return null;
+            }
+            
+            int randomIndex = Random.Range(0, inventory.Count);
+            return inventory[randomIndex];
+        }
     }
 }
