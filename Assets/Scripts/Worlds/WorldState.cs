@@ -3,6 +3,7 @@ namespace Assets.Scripts.Worlds
     using UnityEngine;
     using System.Collections.Generic;
     using Scripts.NPC;
+    using Assets.Scripts.Crime;
 
     public class WorldState : MonoBehaviour
     {
@@ -12,7 +13,7 @@ namespace Assets.Scripts.Worlds
         public int currentTimeInMinutes;
         public List<Location> locations = new List<Location>();
         public List<Npc> npcs = new List<Npc>();
-        //public List<CrimeEvent> ActiveCrimes = new List<CrimeEvent>();
+        public List<Crime> crimes = new List<Crime>();
 
         public void Init(Boot boot, World world){
             _boot = boot;
