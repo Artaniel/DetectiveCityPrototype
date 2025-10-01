@@ -1,5 +1,6 @@
 namespace Assets.Scripts.Worlds
 {
+    using Assets.Scripts.Crime;
     using Assets.Scripts.NPC;
     using Assets.Scripts.Worlds;
     using UnityEngine;
@@ -11,6 +12,7 @@ namespace Assets.Scripts.Worlds
         public Clock clock;
         public NpcFactory npcFactory;
         public LocationFactory locationFactory;
+        public CrimeFactory crimeFactory;
 
         public void Init(Boot boot) {
             _boot = boot;
@@ -18,6 +20,7 @@ namespace Assets.Scripts.Worlds
             clock.Init(boot, this);
             locationFactory.Init(boot, this);
             npcFactory.Init(boot, this);
+            crimeFactory.Init(boot, this);
         }
     }    
 } 
