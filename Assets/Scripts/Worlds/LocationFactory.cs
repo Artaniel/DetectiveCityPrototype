@@ -63,5 +63,9 @@ namespace Assets.Scripts.Worlds
             revPath.Reverse();
             path.AddRange(revPath);
         }
+
+        public Location GetRandomLocation(Location excludeLocation = null) {
+            return _world.state.locations[Random.Range(0, _world.state.locations.Count)];
+        }
     }
 } 

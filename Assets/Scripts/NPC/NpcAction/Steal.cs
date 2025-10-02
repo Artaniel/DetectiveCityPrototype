@@ -46,7 +46,7 @@ namespace Assets.Scripts.NPC.NpcAction
         }
 
         public Location GetRequiredLocation(Npc npc) {
-            return null;
+            return _boot.world.locationFactory.GetRandomLocation(npc.state.currentLocation);
         }
     }
 }
