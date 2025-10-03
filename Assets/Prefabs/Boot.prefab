@@ -1325,6 +1325,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5223236789767009129, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
+      propertyPath: homeLocation
+      value: 
+      objectReference: {fileID: 5690627015692996853}
+    - target: {fileID: 5223236789767009129, guid: e5bac9b5aa272004e9440fc0d98298c9, type: 3}
       propertyPath: characterName
       value: "\u0416\u0443\u043B\u0438\u043A \u0411\u043E\u0431"
       objectReference: {fileID: 0}
