@@ -1,16 +1,19 @@
+using Assets.Scripts.UI;
 using UnityEngine;
+using Assets.Scripts;
 
 public class DebugToolsUi : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    private Boot _boot;
+    private UI _ui;
+    public NpcListUi npcListUi;
+    public CharSheetUi charSheetUi;
         
-    }
-
-    // Update is called once per frame
-    void Update()
+    public void Init(Boot boot, UI ui)
     {
-        
+        _boot = boot;
+        _ui = ui;
+        npcListUi.Init(boot, this);
+        charSheetUi.Init(boot, this);
     }
 }

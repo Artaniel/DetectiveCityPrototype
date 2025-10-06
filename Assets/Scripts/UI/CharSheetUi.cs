@@ -1,16 +1,12 @@
 using UnityEngine;
+using Assets.Scripts;
 
 public class CharSheetUi : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+{    
+    private Boot _boot;
+    private DebugToolsUi _debugToolsUi;
+    public void Init(Boot boot, DebugToolsUi debugToolsUi) {
+        _boot = boot;
+        _debugToolsUi = debugToolsUi;
     }
 }

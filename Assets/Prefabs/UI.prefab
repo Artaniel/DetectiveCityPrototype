@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b121a7dc51c3d034f901adb9ad6b8ee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugToolsUi: {fileID: 199118251202564463}
 --- !u!1 &5928791556472315497
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91fb34af4bc1744498a978ad2628d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcListUi: {fileID: 3170566627586947441}
+  charSheetUi: {fileID: 8453401249968285990}
 --- !u!1 &7001596248768979880
 GameObject:
   m_ObjectHideFlags: 0
