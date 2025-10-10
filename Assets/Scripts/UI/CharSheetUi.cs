@@ -17,6 +17,8 @@ public class CharSheetUi : MonoBehaviour
     public Text energyText;
     public Text traitsText;
     public Text inventoryText;
+
+    private Npc selectedNpc;
     
     public void Init(Boot boot, DebugToolsUi debugToolsUi) {
         _boot = boot;
@@ -56,5 +58,9 @@ public class CharSheetUi : MonoBehaviour
             inventory += "Empty";
         }
         inventoryText.text = inventory;
+
+        npc.state.isLoggingActions = true;
+        selectedNpc.state.isLoggingActions = false;
+        selectedNpc = npc;
     }
 }

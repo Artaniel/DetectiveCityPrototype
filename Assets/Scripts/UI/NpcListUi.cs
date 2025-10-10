@@ -7,7 +7,7 @@ public class NpcListUi : MonoBehaviour
 {
     private Boot _boot;
     private DebugToolsUi _debugToolsUi;
-    public GameObject npcButtonPrefab;
+    public Button npcButtonPrefab;
     public Transform npcListContainer;
 
     public void Init(Boot boot, DebugToolsUi debugToolsUi) {
@@ -21,8 +21,7 @@ public class NpcListUi : MonoBehaviour
         }
 
         foreach (Npc npc in _boot.world.state.npcs) {
-            GameObject buttonObj = Instantiate(npcButtonPrefab, npcListContainer);
-            Button button = buttonObj.GetComponent<Button>();
+            Button button = Instantiate(npcButtonPrefab, npcListContainer);
             button.onClick.AddListener(() => {
                 _debugToolsUi.charSheetUi.SelectNpc(npc);
             });

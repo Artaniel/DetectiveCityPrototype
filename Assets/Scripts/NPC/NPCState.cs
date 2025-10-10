@@ -20,6 +20,7 @@ namespace Assets.Scripts.NPC
         public bool isActionComplete;
 
         public List<Item> inventory;
+        public bool isLoggingActions = false;
 
         public void Init(Boot boot, Npc npc) {
             _boot = boot;

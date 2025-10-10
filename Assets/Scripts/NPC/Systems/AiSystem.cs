@@ -56,16 +56,22 @@ namespace Assets.Scripts.NPC
             INpcAction best = null;
             float utility = 0f;
             float bestUtility = float.MinValue;
+            bool isLogging = npc.state.isLoggingActions;
             
             foreach (INpcAction action in actions) {
                 if (action.CanPerform(npc)) {
                     utility = action.GetUtility(npc);
+                    if (isLogging) {
+                        // log utility
+                    }
                     if (utility <= bestUtility) continue;
                     bestUtility = utility;
                     best = action;                    
                     continue;
+                } else { 
+                    // set -1 to utility log
                 }
-                    
+
                 Location requiredLocation = action.GetRequiredLocation(npc);
                 if (requiredLocation == null || requiredLocation == npc.state.currentLocation) continue;
 
