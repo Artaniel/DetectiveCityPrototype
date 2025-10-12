@@ -21,10 +21,12 @@ namespace Assets.Scripts.NPC
 
         public List<Item> inventory;
         public bool isLoggingActions = false;
+        public Dictionary<string, float> utilityLog;
 
         public void Init(Boot boot, Npc npc) {
             _boot = boot;
             _npc = npc;
+            utilityLog = new Dictionary<string, float>();
         }
     }
 } 
