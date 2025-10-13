@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2268913310720522117}
   - component: {fileID: 256591628945084412}
   - component: {fileID: 7384928608861966564}
+  - component: {fileID: 7287564746347629464}
   m_Layer: 0
   m_Name: NpcListButton
   m_TagString: Untagged
@@ -121,6 +122,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7287564746347629464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935313333680335538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1c35b910c61df4c89732c58e7ab3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonText: {fileID: 3067545668513254101}
+  button: {fileID: 7384928608861966564}
 --- !u!1 &3018353812038291875
 GameObject:
   m_ObjectHideFlags: 0

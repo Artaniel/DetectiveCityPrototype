@@ -7,7 +7,7 @@ public class NpcListUi : MonoBehaviour
 {
     private Boot _boot;
     private DebugToolsUi _debugToolsUi;
-    public Button npcButtonPrefab;
+    public ButtonWithTextUI npcButtonPrefab;
     public Transform npcListContainer;
 
     public void Init(Boot boot, DebugToolsUi debugToolsUi) {
@@ -21,10 +21,12 @@ public class NpcListUi : MonoBehaviour
         }
 
         foreach (Npc npc in _boot.world.state.npcs) {
-            Button button = Instantiate(npcButtonPrefab, npcListContainer);
-            button.onClick.AddListener(() => {
+            ButtonWithTextUI buttonAdapter = Instantiate(npcButtonPrefab, npcListContainer);
+            buttonAdapter.button.onClick.AddListener(() =>
+            {
                 _debugToolsUi.charSheetUi.SelectNpc(npc);
             });
+            buttonAdapter.buttonText.text = npc.name;
         }
     }
 }

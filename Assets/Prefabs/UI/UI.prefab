@@ -88,6 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7516725e08a80024f8fcb91567663589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcButtonPrefab: {fileID: 7287564746347629464, guid: 70a6db4486db9be44b72b739bb57cc36, type: 3}
+  npcListContainer: {fileID: 5699988694626299809}
 --- !u!1 &5382986078628742428
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,3 +342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621f88e498c17604288e793a02689b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 0}
+  locationText: {fileID: 0}
+  activityText: {fileID: 0}
+  hungerText: {fileID: 0}
+  energyText: {fileID: 0}
+  traitsText: {fileID: 0}
+  inventoryText: {fileID: 0}
