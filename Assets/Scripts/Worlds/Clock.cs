@@ -29,6 +29,7 @@ namespace Assets.Scripts.Worlds
 
         private void MinuteTick() {
             _world.npcFactory.TickUpdate(1f);
+            _boot.ui.TickUpdate(1f);
         }
     }
 }

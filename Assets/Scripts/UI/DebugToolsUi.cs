@@ -16,4 +16,8 @@ public class DebugToolsUi : MonoBehaviour
         npcListUi.Init(boot, this);
         charSheetUi.Init(boot, this);
     }
+    
+    public void TickUpdate(float deltatime) { 
+        npcListUi.TickUpdate(deltatime);
+    }
 }

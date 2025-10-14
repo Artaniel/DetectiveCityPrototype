@@ -26,8 +26,9 @@ namespace Assets.Scripts
             bootChannel.BootCreatedSignal(this); 
             if (!mainCamera) mainCamera = Camera.main; 
             
-            world.Init(this);            
-            aiSystem.Init(this);            
+            world.Init(this);
+            aiSystem.Init(this);      
+            ui.Init(this);      
         }
 
         public void Init(Root root) {

@@ -29,4 +29,8 @@ public class NpcListUi : MonoBehaviour
             buttonAdapter.buttonText.text = npc.name;
         }
     }
+            
+    public void TickUpdate(float deltatime) { 
+       RefreshNpcList();
+    }
 }
