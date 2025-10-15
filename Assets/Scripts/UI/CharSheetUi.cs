@@ -4,19 +4,20 @@ using Assets.Scripts.NPC;
 using UnityEngine.UI;
 using Assets.Scripts.NPC.Traits;
 using Assets.Scripts.Items;
+using TMPro;
 
 public class CharSheetUi : MonoBehaviour
 {    
     private Boot _boot;
     private DebugToolsUi _debugToolsUi;
 
-    public Text nameText;
-    public Text locationText;
-    public Text activityText;
-    public Text hungerText;
-    public Text energyText;
-    public Text traitsText;
-    public Text inventoryText;
+    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI locationText;
+    public TextMeshProUGUI activityText;
+    public TextMeshProUGUI hungerText;
+    public TextMeshProUGUI energyText;
+    public TextMeshProUGUI traitsText;
+    public TextMeshProUGUI inventoryText;
 
     private Npc selectedNpc;
     
