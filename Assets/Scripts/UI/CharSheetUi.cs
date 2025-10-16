@@ -18,7 +18,7 @@ public class CharSheetUi : MonoBehaviour
     public TextMeshProUGUI energyText;
     public TextMeshProUGUI traitsText;
     public TextMeshProUGUI inventoryText;
-
+    public TextMeshProUGUI utilityLogText;
     private Npc selectedNpc;
     
     public void Init(Boot boot, DebugToolsUi debugToolsUi) {
@@ -60,8 +60,18 @@ public class CharSheetUi : MonoBehaviour
         }
         inventoryText.text = inventory;
 
+        string utilityLog = "Utility Log:\n";
+        if (npc.state.utilityLog != null && npc.state.utilityLog.Count > 0) {
+            foreach (var entry in npc.state.utilityLog) {
+                utilityLog += entry.Key + ": " + entry.Value.ToString("F2") + "\n";
+            }
+        } else {
+            utilityLog += "Empty";
+        }
+        utilityLogText.text = utilityLog;
+
         npc.state.isLoggingActions = true;
-        selectedNpc.state.isLoggingActions = false;
+        if (selectedNpc) selectedNpc.state.isLoggingActions = false;
         selectedNpc = npc;
     }
 }
