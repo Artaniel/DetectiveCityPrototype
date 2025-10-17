@@ -14,6 +14,7 @@ namespace Assets.Scripts.NPC
         public MoveTo moveTo;
         public Eat eat;
         public Work work;
+        public Steal steal;
 
         public void Init(Boot boot) {
             _boot = boot;
@@ -28,6 +29,7 @@ namespace Assets.Scripts.NPC
             actions.Add(eat);
             actions.Add(moveTo);
             actions.Add(work);
+            actions.Add(steal);
         }
 
         public void TickUpdate(Npc npc, float deltaTime) {
@@ -56,7 +58,7 @@ namespace Assets.Scripts.NPC
             INpcAction best = null;
             float utility = 0f;
             float bestUtility = float.MinValue;
-            bool isLogging = npc.state.isLoggingActions;
+            bool isLogging = true; //npc.state.isLoggingActions;
             if (isLogging) npc.state.utilityLog.Clear();
             
             foreach (INpcAction action in actions) {

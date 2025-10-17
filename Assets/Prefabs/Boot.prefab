@@ -34,6 +34,7 @@ Transform:
   - {fileID: 7030009127697958173}
   - {fileID: 6456055944779693574}
   - {fileID: 863874778981956427}
+  - {fileID: 3504286660114392736}
   m_Father: {fileID: 1111130153361372754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1157359718346876793
@@ -52,6 +53,7 @@ MonoBehaviour:
   moveTo: {fileID: 5822021204179112474}
   eat: {fileID: 5776232031233781081}
   work: {fileID: 1473160150000431862}
+  steal: {fileID: 3736195234357982746}
 --- !u!1 &2651612087568922100
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +551,52 @@ Transform:
   - {fileID: 2737823552035441168}
   m_Father: {fileID: 3143285086955961618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6534392305803025038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3504286660114392736}
+  - component: {fileID: 3736195234357982746}
+  m_Layer: 0
+  m_Name: Steal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3504286660114392736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534392305803025038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3901446182591508177}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3736195234357982746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534392305803025038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9c6aabfde7a5a41ad6a39a9ef86153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  greed: {fileID: 11400000, guid: 2ae587d4652bb9742bb97448778d3b0a, type: 2}
+  criminalTrait: {fileID: 11400000, guid: 95ce54b78ea670e47815f7668e7f4a7c, type: 2}
 --- !u!1 &7212700102225755003
 GameObject:
   m_ObjectHideFlags: 0
