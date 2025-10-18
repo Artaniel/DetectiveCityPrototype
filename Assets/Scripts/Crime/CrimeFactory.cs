@@ -17,6 +17,7 @@ namespace Assets.Scripts.Crime
         public void CreateCrime(){
             Crime crime = Instantiate(crimePrefab, transform);
             _world.state.crimes.Add(crime);
+            crime.Init(_boot, this);
         }
 
     }
