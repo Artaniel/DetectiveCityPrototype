@@ -71,10 +71,10 @@
 [+] Реестр преступлений:
   [+] Создать `CrimeFactory` (фабрика/реестр), доступную из `World`, с полем `crimes: List<Crime>`.
   [+] Создать класс `Crime`:
-    - timeMinutes (int)
+    - timeMinutes (float)
     - location (Location)
     - stolenItem (Item)             // на текущем прототипе — кража; дальше типы расширим
-    - thief (Npc|null)              // может быть неизвестен; по умолчанию null
+    - criminal (Npc|null)              // может быть неизвестен; по умолчанию null
     - suspects (List<Npc>)          // снимок присутствующих в локации в момент кражи
     - status (Open|Closed)          // состояние дела
     - resolution (None|Caught|Mistake)
@@ -84,7 +84,7 @@
   [ ] В `Steal.Execute`:
     - [ ] До изъятия предмета собрать текущих `Npc` в этой `location` → сформировать `suspects`.
     - [ ] Удалить `stolenItem` из инвентаря локации и добавить в инвентарь NPC.
-    - [ ] Создать `Crime` с (timeMinutes, location, stolenItem, thief = текущий NPC, suspects) и добавить в `CrimeFactory.crimes`.
+    - [ ] Создать `Crime` с (timeMinutes, location, stolenItem, criminal = текущий NPC, suspects) и добавить в `CrimeFactory.crimes`.
     - [ ] Логировать в консоль краткую строку с временем, локацией, предметом и количеством подозреваемых.
 
 [ ] Наблюдаемость для игрока (консоль):
@@ -96,7 +96,7 @@
   [ ] Тестовая кнопка/команда "поймать вора": для выбранного `Crime`:
       - status = Closed
       - resolution = Caught
-      - к `thief` добавить трейт `Disgraced`.
+      - к `criminal` добавить трейт `Disgraced`.
   [ ] Тест “ошибка обвинения”: закрыть дело с resolution = Mistake (вор не совпал/обвинённый не был в `suspects`).
 
 Критерий успеха:
