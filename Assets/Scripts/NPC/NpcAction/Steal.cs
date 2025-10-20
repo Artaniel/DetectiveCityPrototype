@@ -35,7 +35,16 @@ namespace Assets.Scripts.NPC.NpcAction
             npc.state.currentLocation.inventory.Remove(itemToSteal);
             npc.state.inventory.Add(itemToSteal);
 
-            Debug.Log($"[{_boot.world.state.currentTimeInMinutes}] {npc.data.characterName}: Steal an item!");    
+            _boot.world.crimeFactory.CreateCrime(
+                _boot.world.state.currentTimeInMinutes,
+                npc.state.currentLocation,
+                itemToSteal,
+                npc,
+                _boot.world.npcFactory.GetNpcsInLocation(npc.state.currentLocation),
+                $"Steal {itemToSteal.displayName}"
+            );
+
+            Debug.Log($"[{_boot.world.state.currentTimeInMinutes}] {npc.data.characterName} {npc.state.currentLocation.name}: Steal an item!");    
         }
 
         public void TickUpdate(float deltaTime, Npc npc) {

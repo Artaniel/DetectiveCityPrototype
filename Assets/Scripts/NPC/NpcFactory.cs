@@ -23,5 +23,15 @@ namespace Assets.Scripts.NPC
                 npc.TickUpdate(deltaTime);
             }
         }
+
+        public List<Npc> GetNpcsInLocation(Location location){
+            List<Npc> npcsInLocation = new List<Npc>();
+            foreach (Npc npc in _world.state.npcs){
+                if (npc.state.currentLocation == location){
+                    npcsInLocation.Add(npc);
+                }
+            }
+            return npcsInLocation;
+        }
     }
 }
