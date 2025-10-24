@@ -6,11 +6,12 @@ namespace Assets.Scripts.UI
     {
         private Boot _boot;
         public DebugToolsUi debugToolsUi;
-        public NpcListUi npcListUi;
+        public PanelSwitcherUI panelSwitcherUI;
 
         public void Init(Boot boot) {
             _boot = boot;
             debugToolsUi.Init(boot, this);
+            panelSwitcherUI.Init(boot, this);
         }
 
         public void TickUpdate(float deltatime) { 
