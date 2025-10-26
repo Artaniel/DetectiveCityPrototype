@@ -1,0 +1,36 @@
+using UnityEngine;
+using Assets.Scripts;
+using UnityEngine.UI;
+using Assets.Scripts.NPC;
+
+public class CrimeListUi : MonoBehaviour
+{
+    private Boot _boot;
+    private DebugToolsUi _debugToolsUi;
+    public ButtonWithTextUI npcButtonPrefab;
+    public Transform crimeListContainer;
+
+    public void Init(Boot boot, DebugToolsUi debugToolsUi) {
+        _boot = boot;
+        _debugToolsUi = debugToolsUi;
+    }
+    
+    public void RefreshNpcList() {
+        foreach (Transform child in crimeListContainer) {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Crime crime in _boot.world.state.crimes) {
+            ButtonWithTextUI buttonAdapter = Instantiate(npcButtonPrefab, npcListContainer);
+            buttonAdapter.button.onClick.AddListener(() =>
+            {
+                //_debugToolsUi.charSheetUi.SelectNpc(npc);
+            });
+            buttonAdapter.buttonText.text = crime.name;
+        }
+    }
+            
+    public void TickUpdate(float deltatime) { 
+       RefreshNpcList();
+    }
+}
