@@ -2,6 +2,7 @@ using UnityEngine;
 using Assets.Scripts;
 using UnityEngine.UI;
 using Assets.Scripts.NPC;
+using Assets.Scripts.Crime;
 
 public class CrimeListUi : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class CrimeListUi : MonoBehaviour
         }
 
         foreach (Crime crime in _boot.world.state.crimes) {
-            ButtonWithTextUI buttonAdapter = Instantiate(npcButtonPrefab, npcListContainer);
+            ButtonWithTextUI buttonAdapter = Instantiate(npcButtonPrefab, crimeListContainer);
             buttonAdapter.button.onClick.AddListener(() =>
             {
                 //_debugToolsUi.charSheetUi.SelectNpc(npc);
