@@ -1,6 +1,7 @@
 using UnityEngine;
 using Assets.Scripts;
 using Assets.Scripts.NPC;
+using Assets.Scripts.Crime;
 using Assets.Scripts.NPC.Traits;
 using Assets.Scripts.Items;
 using TMPro;
@@ -15,7 +16,7 @@ public class CrimeUi : MonoBehaviour
         _debugToolsUi = debugToolsUi;
     }
 
-    public void SelectNpc(Npc npc) {
+    public void SelectCrime(Crime crime) {
         
     }
 }

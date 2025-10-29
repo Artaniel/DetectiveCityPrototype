@@ -8,6 +8,7 @@ public class DebugToolsUi : MonoBehaviour
     private UI _ui;
     public NpcListUi npcListUi;
     public CharSheetUi charSheetUi;
+    public CrimeUi crimeUi;
         
     public void Init(Boot boot, UI ui)
     {
@@ -15,6 +16,7 @@ public class DebugToolsUi : MonoBehaviour
         _ui = ui;
         npcListUi.Init(boot, this);
         charSheetUi.Init(boot, this);
+        crimeUi.Init(boot, this);
     }
     
     public void TickUpdate(float deltatime) { 

@@ -25,7 +25,7 @@ public class CrimeListUi : MonoBehaviour
             ButtonWithTextUI buttonAdapter = Instantiate(npcButtonPrefab, crimeListContainer);
             buttonAdapter.button.onClick.AddListener(() =>
             {
-                //_debugToolsUi.charSheetUi.SelectNpc(npc);
+                _debugToolsUi.crimeUi.SelectCrime(crime);
             });
             buttonAdapter.buttonText.text = crime.name;
         }
