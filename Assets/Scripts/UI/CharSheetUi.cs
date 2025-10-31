@@ -28,10 +28,10 @@ public class CharSheetUi : MonoBehaviour
     
     public void SelectNpc(Npc npc) {
         Debug.Log("Selected NPC: " + npc.name);
-        UpdateNpcDetails(npc);
+        RefreshNpcDetails(npc);
     }
 
-    public void UpdateNpcDetails(Npc npc) {
+    public void RefreshNpcDetails(Npc npc) {
         nameText.text = "Name: " + npc.name;
         locationText.text = "Location: " + npc.state.currentLocation.name;
         activityText.text = "Activity: " + npc.state.currentActivity.ToString();
