@@ -586,6 +586,66 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1830775413461839940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8444872180415633195}
+  - component: {fileID: 1131601126466157528}
+  m_Layer: 0
+  m_Name: CrimeRecordsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8444872180415633195
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830775413461839940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2568743843689263027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -448, y: 5}
+  m_SizeDelta: {x: 872.1561, y: 1027.624}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1131601126466157528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830775413461839940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 500, y: 50}
+  m_Spacing: {x: 0, y: 5}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1984733330873508026
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22.8505, y: 179}
+  m_AnchoredPosition: {x: 22.850586, y: 179}
   m_SizeDelta: {x: 801.701, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &402159246962156428
@@ -913,7 +973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.829987, y: 258}
+  m_AnchoredPosition: {x: 11.829956, y: 258}
   m_SizeDelta: {x: 779.66, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6931926990862615573
@@ -1163,14 +1223,13 @@ GameObject:
   - component: {fileID: 4510362499310888145}
   - component: {fileID: 5746880568739559251}
   - component: {fileID: 3170566627586947441}
-  - component: {fileID: 6475366990375781388}
   m_Layer: 0
   m_Name: NpcListPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5699988694626299809
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1182,13 +1241,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1753506416167406081}
+  - {fileID: 4750052626183673801}
   m_Father: {fileID: 1467560436964790803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 135.44, y: 0}
-  m_SizeDelta: {x: 760.24, y: 1080}
+  m_SizeDelta: {x: -135.44, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4510362499310888145
 CanvasRenderer:
@@ -1241,31 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcButtonPrefab: {fileID: 7287564746347629464, guid: 70a6db4486db9be44b72b739bb57cc36, type: 3}
-  npcListContainer: {fileID: 5699988694626299809}
---- !u!114 &6475366990375781388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2779224610141858610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 500, y: 50}
-  m_Spacing: {x: 0, y: 5}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  npcListContainer: {fileID: 4750052626183673801}
 --- !u!1 &3651444507376402868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,7 +1337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.33, y: 110}
+  m_AnchoredPosition: {x: 17.329956, y: 110}
   m_SizeDelta: {x: 790.66, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4581522173508490499
@@ -1781,7 +1818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.69989, y: 419}
+  m_AnchoredPosition: {x: -4.7000427, y: 419}
   m_SizeDelta: {x: 746.6002, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7325696539475408662
@@ -2235,10 +2272,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5699988694626299809}
-  - {fileID: 1753506416167406081}
-  - {fileID: 2662716168637579579}
-  - {fileID: 3213169736448055495}
   - {fileID: 2568743843689263027}
+  - {fileID: 3213169736448055495}
   m_Father: {fileID: 7915280621105667470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2323,6 +2358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcListUi: {fileID: 3170566627586947441}
   charSheetUi: {fileID: 8453401249968285990}
+  crimeListUi: {fileID: 2443975453285907284}
   crimeUi: {fileID: 6821590216350439586}
 --- !u!1 &5959109617012228771
 GameObject:
@@ -2554,7 +2590,7 @@ GameObject:
   - component: {fileID: 3780827249136480564}
   - component: {fileID: 6821590216350439586}
   m_Layer: 0
-  m_Name: CrimePanel
+  m_Name: CrimeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2567,7 +2603,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6192891295342276138}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2580,7 +2616,7 @@ RectTransform:
   - {fileID: 6540864818593987614}
   - {fileID: 8634633736045038629}
   - {fileID: 4069128679801392163}
-  m_Father: {fileID: 1467560436964790803}
+  m_Father: {fileID: 2568743843689263027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -2679,7 +2715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.719208, y: -267.4421}
+  m_AnchoredPosition: {x: 6.7192383, y: -267.4421}
   m_SizeDelta: {x: 769.4385, y: 366.8842}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7885572315658703202
@@ -2935,7 +2971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1753506416167406081
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2943,7 +2979,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7001596248768979880}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2956,12 +2992,12 @@ RectTransform:
   - {fileID: 8188073402829904547}
   - {fileID: 319376631951289105}
   - {fileID: 8274956047984949357}
-  m_Father: {fileID: 1467560436964790803}
+  m_Father: {fileID: 5699988694626299809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 895.6848, y: 1080}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1772, y: -528.6966}
+  m_SizeDelta: {x: 859.9619, y: 1057.3932}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &3696759793614617296
 CanvasRenderer:
@@ -3157,6 +3193,66 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &7497661751620231460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4750052626183673801}
+  - component: {fileID: 6396975673583900422}
+  m_Layer: 0
+  m_Name: NpcContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4750052626183673801
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7497661751620231460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5699988694626299809}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 480.16547, y: -527.9635}
+  m_SizeDelta: {x: 892.3308, y: 1023.927}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6396975673583900422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7497661751620231460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 500, y: 50}
+  m_Spacing: {x: 0, y: 5}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &7526409346791920116
 GameObject:
   m_ObjectHideFlags: 0
@@ -3463,7 +3559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22.85, y: 37}
+  m_AnchoredPosition: {x: 22.849976, y: 37}
   m_SizeDelta: {x: 801.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1011463543164309591
@@ -3576,13 +3672,14 @@ GameObject:
   - component: {fileID: 2568743843689263027}
   - component: {fileID: 2950564108048022649}
   - component: {fileID: 8690490043350632049}
+  - component: {fileID: 2443975453285907284}
   m_Layer: 0
-  m_Name: PanelCases
+  m_Name: CrimeListPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2568743843689263027
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3594,13 +3691,15 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2662716168637579579}
+  - {fileID: 8444872180415633195}
   m_Father: {fileID: 1467560436964790803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -444.43, y: 0}
-  m_SizeDelta: {x: -1159.8, y: 0}
+  m_AnchoredPosition: {x: 67.735, y: 0}
+  m_SizeDelta: {x: -135.47, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2950564108048022649
 CanvasRenderer:
@@ -3640,6 +3739,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2443975453285907284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865814002836499113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b703ba0ce4520489165b8400102bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcButtonPrefab: {fileID: 7287564746347629464, guid: 70a6db4486db9be44b72b739bb57cc36, type: 3}
+  crimeListContainer: {fileID: 8444872180415633195}
 --- !u!1 &7956464981607633983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3904,7 +4017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.829987, y: 341}
+  m_AnchoredPosition: {x: 11.829956, y: 341}
   m_SizeDelta: {x: 779.6606, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7868604919711201032

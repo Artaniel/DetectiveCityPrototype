@@ -27,7 +27,6 @@ public class CharSheetUi : MonoBehaviour
     }
     
     public void SelectNpc(Npc npc) {
-        Debug.Log("Selected NPC: " + npc.name);
         RefreshNpcDetails(npc);
     }
 

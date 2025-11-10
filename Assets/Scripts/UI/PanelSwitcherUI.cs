@@ -19,9 +19,7 @@ public class PanelSwitcherUI : MonoBehaviour
     }
 
     public void Select(int index) {
-        Debug.Log("Selecting panel: " + index);
         for (int i = 0; i < panels.Count; i++) {
-            Debug.Log("Setting panel " + i + "/"+ index+" active: " + (i == index));
             panels[i].SetActive(i == index);
         }
     }

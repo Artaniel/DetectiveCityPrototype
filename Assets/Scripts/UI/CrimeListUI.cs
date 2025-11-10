@@ -16,15 +16,14 @@ public class CrimeListUi : MonoBehaviour
         _debugToolsUi = debugToolsUi;
     }
     
-    public void RefreshNpcList() {
+    public void RefreshCrimeList() {
         foreach (Transform child in crimeListContainer) {
             Destroy(child.gameObject);
         }
 
         foreach (Crime crime in _boot.world.state.crimes) {
             ButtonWithTextUI buttonAdapter = Instantiate(npcButtonPrefab, crimeListContainer);
-            buttonAdapter.button.onClick.AddListener(() =>
-            {
+            buttonAdapter.button.onClick.AddListener(() => {
                 _debugToolsUi.crimeUi.SelectCrime(crime);
             });
             buttonAdapter.buttonText.text = crime.name;
@@ -32,6 +31,6 @@ public class CrimeListUi : MonoBehaviour
     }
             
     public void TickUpdate(float deltatime) { 
-       RefreshNpcList();
+       RefreshCrimeList();
     }
 }

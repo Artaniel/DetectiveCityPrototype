@@ -28,7 +28,6 @@ public class CrimeUi : MonoBehaviour
     }
 
     public void SelectCrime(Crime crime) {
-        Debug.Log("Selected Crime: " + crime.stolenItem.name + " at " + crime.location.name);
         RefreshCrimeDetails(crime);
     }
 
