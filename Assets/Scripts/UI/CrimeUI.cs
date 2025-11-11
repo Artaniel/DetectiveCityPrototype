@@ -18,7 +18,6 @@ public class CrimeUi : MonoBehaviour
     public TextMeshProUGUI statusText;
     public TextMeshProUGUI resolutionText;
     public TMP_InputField notesText;
-    public TMP_InputField acusedText;
 
     private Crime selectedCrime;
 

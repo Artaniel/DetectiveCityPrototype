@@ -17,6 +17,7 @@ public class CharSheetUi : MonoBehaviour
     public TextMeshProUGUI hungerText;
     public TextMeshProUGUI energyText;
     public TextMeshProUGUI traitsText;
+    public Button inspectInventoryButton;
     public TextMeshProUGUI inventoryText;
     public TextMeshProUGUI utilityLogText;
     private Npc selectedNpc;
@@ -24,6 +25,7 @@ public class CharSheetUi : MonoBehaviour
     public void Init(Boot boot, DebugToolsUi debugToolsUi) {
         _boot = boot;
         _debugToolsUi = debugToolsUi;
+        inspectInventoryButton.onClick.AddListener(ShowInventory);
     }
     
     public void SelectNpc(Npc npc) {
@@ -46,18 +48,7 @@ public class CharSheetUi : MonoBehaviour
         } else {
             traits += "None";
         }
-        traitsText.text = traits;
-
-        string inventory = "Inventory: ";
-        if (npc.state.inventory != null && npc.state.inventory.Count > 0) {
-            foreach (Item item in npc.state.inventory) {
-                inventory += item.name + ", ";
-            }
-            inventory = inventory.TrimEnd(',', ' ');
-        } else {
-            inventory += "Empty";
-        }
-        inventoryText.text = inventory;
+        traitsText.text = traits;        
 
         string utilityLog = "Utility Log:\n";
         if (npc.state.utilityLog != null && npc.state.utilityLog.Count > 0) {
@@ -72,5 +63,18 @@ public class CharSheetUi : MonoBehaviour
         npc.state.isLoggingActions = true;
         if (selectedNpc) selectedNpc.state.isLoggingActions = false;
         selectedNpc = npc;
+    }
+
+    private void ShowInventory() {
+        string inventory = "Inventory: ";
+        if (npc.state.inventory != null && npc.state.inventory.Count > 0) {
+            foreach (Item item in npc.state.inventory) {
+                inventory += item.name + ", ";
+            }
+            inventory = inventory.TrimEnd(',', ' ');
+        } else {
+            inventory += "Empty";
+        }
+        inventoryText.text = inventory;
     }
 }
