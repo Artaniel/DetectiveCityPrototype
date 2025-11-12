@@ -110,15 +110,15 @@
 Этап 5: Игрок-детектив
 
 Задачи:  
-  [ ] Просмотр профиля NPC: черты, инвентарь
-    [ ] Скрыть инвентарь в CharSheetUi по умолчанию (не показывать inventoryText при открытии карточки)
-    [ ] Добавить кнопку "Inspect Inventory" в CharSheetUi
-    [ ] При нажатии "Inspect Inventory": показать инвентарь NPC (обновить inventoryText, сделать видимым)
+  [+] Просмотр профиля NPC: черты, инвентарь
+    [+] Скрыть инвентарь в CharSheetUi по умолчанию (не показывать inventoryText при открытии карточки)
+    [+] Добавить кнопку "Inspect Inventory" в CharSheetUi
+    [+] При нажатии "Inspect Inventory": показать инвентарь NPC (обновить inventoryText, сделать видимым)
 
 [ ] Обвинение:
-  [ ] Удалить acusedText из CrimeUI (не нужен ввод текста)
-  [ ] Добавить Dropdown в CrimeUI для выбора подозреваемого (заполнить именами из crime.suspects)
-  [ ] Добавить кнопку "Accuse Selected" в CrimeUI (активна только если выбран подозреваемый в Dropdown)
+  [+] Удалить acusedText из CrimeUI (не нужен ввод текста)
+  [+] Добавить Dropdown в CrimeUI для выбора подозреваемого (заполнить именами из crime.suspects)
+  [+] Добавить кнопку "Accuse Selected" в CrimeUI (активна только если выбран подозреваемый в Dropdown)
 
 [ ] При нажатии "Accuse Selected":
   [ ]Если выбранный NPC == crime.criminal: 

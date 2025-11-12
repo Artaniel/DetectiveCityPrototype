@@ -62,10 +62,13 @@ public class CharSheetUi : MonoBehaviour
 
         npc.state.isLoggingActions = true;
         if (selectedNpc) selectedNpc.state.isLoggingActions = false;
+
+        inventoryText.text = "";
         selectedNpc = npc;
     }
 
-    private void ShowInventory() {
+    private void ShowInventory() { ShowInventory(selectedNpc); }
+    private void ShowInventory(Npc npc) {
         string inventory = "Inventory: ";
         if (npc.state.inventory != null && npc.state.inventory.Count > 0) {
             foreach (Item item in npc.state.inventory) {

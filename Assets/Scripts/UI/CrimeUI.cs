@@ -5,6 +5,9 @@ using Assets.Scripts.Crime;
 using Assets.Scripts.NPC.Traits;
 using Assets.Scripts.Items;
 using TMPro;
+using UnityEngine.UI;
+using System.Collections;
+using System.Linq;
 
 public class CrimeUi : MonoBehaviour
 {
@@ -17,7 +20,9 @@ public class CrimeUi : MonoBehaviour
     public TextMeshProUGUI suspectsText;
     public TextMeshProUGUI statusText;
     public TextMeshProUGUI resolutionText;
-    public TMP_InputField notesText;
+
+    public TMPro.TMP_Dropdown suspectsDropdown;
+    public Button accuseButton;
 
     private Crime selectedCrime;
 
@@ -48,8 +53,29 @@ public class CrimeUi : MonoBehaviour
 
         statusText.text = "Status: " + crime.status.ToString();
         resolutionText.text = "Resolution: " + crime.resolution.ToString();
-        notesText.text = "Notes: " + (string.IsNullOrEmpty(crime.notes) ? "N/A" : crime.notes);
 
+        suspectsDropdown.ClearOptions();
+        suspectsDropdown.AddOptions(
+            crime.suspects.Select(s => new TMP_Dropdown.OptionData(s.name)).ToList()
+            );
+            
+        accuseButton.onClick.AddListener(() => {
+            _debugToolsUi.crimeUi.AccuseSelected();
+        });
         selectedCrime = crime;
+    }
+
+    private void AccuseSelected() {
+        if (selectedCrime == null) return;
+        Npc accused = selectedCrime.suspects[suspectsDropdown.value];
+        if (accused == selectedCrime.criminal) {
+            selectedCrime.resolution = CrimeResolution.Caught;
+            Debug.Log("Crime resolved: " + selectedCrime.resolution.ToString());
+        } else {
+            selectedCrime.resolution = CrimeResolution.Mistake;
+            Debug.Log("Crime resolved: " + selectedCrime.resolution.ToString());
+        }
+        selectedCrime.status = CrimeStatus.Closed;
+        RefreshCrimeDetails(selectedCrime);
     }
 }
