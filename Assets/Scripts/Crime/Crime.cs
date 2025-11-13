@@ -3,6 +3,7 @@ using Assets.Scripts.Worlds;
 using System.Collections.Generic;
 using Assets.Scripts.NPC;
 using Assets.Scripts.Items;
+using Assets.Scripts.NPC.Traits;
 
 namespace Assets.Scripts.Crime
 {
@@ -30,6 +31,8 @@ namespace Assets.Scripts.Crime
         public CrimeResolution resolution;
         public string notes;
 
+        public Trait disgracedTrait;
+
         public void Init(Boot boot, CrimeFactory crimeFactory) {
             _boot = boot;
             _factory = crimeFactory;
@@ -44,6 +47,18 @@ namespace Assets.Scripts.Crime
             this.status = CrimeStatus.Open;
             this.resolution = CrimeResolution.None;
             this.notes = notes;
+        }
+        
+        public void ResolveAccusation(Npc accused) {
+            if (accused == criminal) {
+                resolution = CrimeResolution.Caught;
+                accused.data.SetTrait(disgracedTrait, 1.0f);  
+                Debug.Log("Crime resolved: " + resolution.ToString());
+            } else {
+                resolution = CrimeResolution.Mistake;
+                Debug.Log("Crime resolved: " + resolution.ToString());
+            }
+            status = CrimeStatus.Closed;
         }
     }
 }

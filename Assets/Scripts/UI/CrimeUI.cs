@@ -68,14 +68,7 @@ public class CrimeUi : MonoBehaviour
     private void AccuseSelected() {
         if (selectedCrime == null) return;
         Npc accused = selectedCrime.suspects[suspectsDropdown.value];
-        if (accused == selectedCrime.criminal) {
-            selectedCrime.resolution = CrimeResolution.Caught;
-            Debug.Log("Crime resolved: " + selectedCrime.resolution.ToString());
-        } else {
-            selectedCrime.resolution = CrimeResolution.Mistake;
-            Debug.Log("Crime resolved: " + selectedCrime.resolution.ToString());
-        }
-        selectedCrime.status = CrimeStatus.Closed;
+        selectedCrime.ResolveAccusation(accused);
         RefreshCrimeDetails(selectedCrime);
     }
 }
