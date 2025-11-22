@@ -8,6 +8,8 @@ namespace Assets.Scripts.Worlds
         private Boot _boot;
         private World _world;
 
+        public List<Location> locations;
+
         public void Init(Boot boot, World world) {
             _boot = boot;
             _world = world;
@@ -65,7 +67,7 @@ namespace Assets.Scripts.Worlds
         }
 
         public Location GetRandomLocation(Location excludeLocation = null) {
-            return _world.state.locations[Random.Range(0, _world.state.locations.Count)];
+            return locations[Random.Range(0, locations.Count)];
         }
     }
 } 

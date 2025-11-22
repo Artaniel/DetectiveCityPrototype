@@ -11,7 +11,6 @@ namespace Assets.Scripts.Worlds
         private World _world;
 
         public int currentTimeInMinutes;
-        public List<Location> locations = new List<Location>();
         public List<Npc> npcs = new List<Npc>();
         public List<Crime> crimes = new List<Crime>();
 

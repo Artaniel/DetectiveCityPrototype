@@ -15,7 +15,7 @@ namespace Assets.Scripts.Worlds
         Street
         }
         
-        public string id;
+        public string description;
         public LocationType type;
         public List<Location> connectedLocations = new List<Location>();
         public List<Item> inventory;

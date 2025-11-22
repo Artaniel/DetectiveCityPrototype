@@ -38,7 +38,7 @@ namespace Assets.Scripts.NPC.NpcAction
 
         public void Execute(Npc npc) {
             npc.state.isActionComplete = false;
-            npc.state.currentActivity = $"MoveTo({targetLocation?.id})";
+            npc.state.currentActivity = $"MoveTo({targetLocation?.description})";
             if (_path.Count == 0) {
                 CalculatePath(npc);
             }
