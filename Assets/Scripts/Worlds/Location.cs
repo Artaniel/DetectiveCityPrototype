@@ -19,6 +19,7 @@ namespace Assets.Scripts.Worlds
         public LocationType type;
         public List<Location> connectedLocations = new List<Location>();
         public List<Item> inventory;
+        public List<Transform> possiblePositions;
 
 
         public void Init(Boot boot) {
