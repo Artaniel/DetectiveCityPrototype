@@ -13,6 +13,7 @@ namespace Assets.Scripts.NPC
         public NPCState state;
         public NpcMetabolism metabolism;
         public NpcAi ai;
+        public NpcMovement movement;
 
         public void Init(Boot boot, World world) {
             _boot = boot;
@@ -21,6 +22,7 @@ namespace Assets.Scripts.NPC
             state.Init(boot, this);
             metabolism.Init(boot, this);
             ai.Init(boot, this);
+            movement.Init(boot, this);
         }
 
         public void TickUpdate(float deltaTime) {

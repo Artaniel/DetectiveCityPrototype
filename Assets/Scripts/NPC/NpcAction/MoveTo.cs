@@ -1,7 +1,5 @@
-using Assets.Scripts.NPC;
 using Assets.Scripts.Worlds;
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace Assets.Scripts.NPC.NpcAction
 {
@@ -13,8 +11,6 @@ namespace Assets.Scripts.NPC.NpcAction
         private LocationFactory _locationFactory;
         public Location targetLocation;
         public float moveUtility = 0.5f;
-        private List<Location> _path = new List<Location>();
-        private int _currentStep = 0;
 
         public void Init(Boot boot, AiSystem ai) {
             _boot = boot;
@@ -24,7 +20,6 @@ namespace Assets.Scripts.NPC.NpcAction
         public void SetTarget(Location location, Npc npc) {
             targetLocation = location;
             npc.state.isActionComplete = false;
-            _currentStep = 0;
             CalculatePath(npc);
         }
 
@@ -39,22 +34,14 @@ namespace Assets.Scripts.NPC.NpcAction
         public void Execute(Npc npc) {
             npc.state.isActionComplete = false;
             npc.state.currentActivity = $"MoveTo({targetLocation?.description})";
-            if (_path.Count == 0) {
-                CalculatePath(npc);
-            }
+            CalculatePath(npc);
         }
 
         public void TickUpdate(float deltaTime, Npc npc) {
-            if (npc.state.isActionComplete || _path.Count == 0) return;
-            if (_currentStep < _path.Count) {
-                npc.state.currentLocation = _path[_currentStep];
-                _currentStep++;
-                if (npc.state.currentLocation == targetLocation) {
-                    npc.state.isActionComplete = true;
-                }
-            } else {
+            if (npc.state.isActionComplete) return;
+            if (npc.state.currentLocation == targetLocation) {
                 npc.state.isActionComplete = true;
-            }
+            }            
         }
 
         public bool IsComplete(Npc npc) {
@@ -62,11 +49,7 @@ namespace Assets.Scripts.NPC.NpcAction
         }
 
         private void CalculatePath(Npc npc) {
-            _path.Clear();
-            if (_locationFactory != null) {
-                _path = _locationFactory.FindPath(npc.state.currentLocation, targetLocation);
-                _currentStep = 0;
-            }
+            npc.movement.agent.SetDestination(targetLocation.GetValidPoint());
         }
 
         public Location GetRequiredLocation(Npc npc) {

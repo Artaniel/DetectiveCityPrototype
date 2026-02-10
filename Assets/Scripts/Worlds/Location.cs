@@ -3,6 +3,7 @@ namespace Assets.Scripts.Worlds
     using UnityEngine;
     using System.Collections.Generic;
     using Assets.Scripts.Items;
+    using System.Linq;
 
     public class Location : MonoBehaviour
     {
@@ -33,6 +34,11 @@ namespace Assets.Scripts.Worlds
             
             int randomIndex = Random.Range(0, inventory.Count);
             return inventory[randomIndex];
+        }
+
+        public Vector3 GetValidPoint() {
+            if (possiblePositions == null || possiblePositions.Count == 0) return transform.position;
+            return possiblePositions[Random.Range(0, possiblePositions.Count)].position;
         }
     }
 }
