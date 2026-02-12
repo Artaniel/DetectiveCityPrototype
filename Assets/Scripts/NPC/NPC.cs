@@ -28,6 +28,7 @@ namespace Assets.Scripts.NPC
         public void TickUpdate(float deltaTime) {
             metabolism.TickUpdate(deltaTime);
             ai.TickUpdate(deltaTime);
+            movement.TickUpdate(deltaTime);
         }
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Assets.Scripts.NPC;
 
 namespace Assets.Scripts.Worlds
 {
@@ -9,6 +10,7 @@ namespace Assets.Scripts.Worlds
         private World _world;
 
         public List<Location> locations;
+        public Location defaultLocation;
 
         public void Init(Boot boot, World world) {
             _boot = boot;
@@ -68,6 +70,10 @@ namespace Assets.Scripts.Worlds
 
         public Location GetRandomLocation(Location excludeLocation = null) {
             return locations[Random.Range(0, locations.Count)];
+        }
+
+        public void SetDefaultLocation(Npc npc) {
+            npc.state.currentLocation = defaultLocation;
         }
     }
 } 

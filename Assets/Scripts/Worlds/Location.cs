@@ -7,7 +7,7 @@ namespace Assets.Scripts.Worlds
 
     public class Location : MonoBehaviour
     {
-        private Boot _boot;
+        private Boot _boot;        
         public enum LocationType {
         Home,
         Work,
@@ -21,6 +21,7 @@ namespace Assets.Scripts.Worlds
         public List<Location> connectedLocations = new List<Location>();
         public List<Item> inventory;
         public List<Transform> possiblePositions;
+        public Collider roomTrigger;
 
 
         public void Init(Boot boot) {

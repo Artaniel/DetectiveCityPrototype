@@ -392,10 +392,6 @@ PrefabInstance:
       propertyPath: 'inventory.Array.data[0]'
       value: 
       objectReference: {fileID: 6008463446453748426}
-    - target: {fileID: 2069387965562021910, guid: 5946a768c664f394ab6e9fa5662d5389, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: e163b3f9ab12877408366b1ef88cc452, type: 2}
     - target: {fileID: 3785294331924096364, guid: 5946a768c664f394ab6e9fa5662d5389, type: 3}
       propertyPath: 'inventory.Array.data[0]'
       value: 
@@ -471,10 +467,6 @@ PrefabInstance:
     - target: {fileID: 5382986078628742428, guid: 1590936f7351c3a4ab9606a1a11ba839, type: 3}
       propertyPath: m_Name
       value: UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 5382986078628742428, guid: 1590936f7351c3a4ab9606a1a11ba839, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7915280621105667470, guid: 1590936f7351c3a4ab9606a1a11ba839, type: 3}
       propertyPath: m_LocalPosition.x
