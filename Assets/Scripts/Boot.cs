@@ -16,6 +16,8 @@ namespace Assets.Scripts
         public Library library;
         public World world;
         public AiSystem aiSystem;
+        public InputService input;
+        public Player player;
 
 
         private void Awake() {
@@ -28,7 +30,9 @@ namespace Assets.Scripts
             
             world.Init(this);
             aiSystem.Init(this);      
-            ui.Init(this);      
+            ui.Init(this);     
+            player.Init(this);     
+            input.Init(this);      
         }
 
         public void Init(Root root) {
